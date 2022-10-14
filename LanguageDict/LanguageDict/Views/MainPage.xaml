@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:LanguageDict.Models"
+             x:Class="LanguageDict.Views.MainPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddNewDict" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
+    </ContentPage.ToolbarItems>
+
+    <CollectionView x:Name="dictCollection"
+                Margin="50"
+                ItemsSource="{Binding AllDictionaries}"
+                SelectionMode="Single"
+                SelectionChanged="DictCollection_SelectionChanged">
+
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Span="4" Orientation="Vertical"/>
+        </CollectionView.ItemsLayout>
+        
+        
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="10">
+                    <Border Stroke="Blue"
+                            HeightRequest="300"
+                            MaximumWidthRequest="300"
+                            StrokeThickness="3"
+                            StrokeShape="RoundRectangle 20">
+                        <StackLayout>
+                            <Image Source="{Binding Image}" Aspect="AspectFit" MaximumHeightRequest="150" MaximumWidthRequest="300"/>
+                            <Label Text="{Binding Target}" FontSize="15"  TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Text="{Binding Native}" FontSize="15"  TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <BoxView Color="Blue" HeightRequest="2" HorizontalOptions="Fill" />
+                            <Label Text="{Binding Description}" FontSize="Body"  TextColor="White" Padding="15"/>
+                        </StackLayout>
+                        
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+    </CollectionView>
+
+
+
+</ContentPage>
