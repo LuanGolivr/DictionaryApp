@@ -832,6 +832,21 @@
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-brands-400.ttf">
+      <PackagePath>fa-brands-400.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-regular-400.ttf">
+      <PackagePath>fa-regular-400.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-solid-900.ttf">
+      <PackagePath>fa-solid-900.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-v4compatibility.ttf">
+      <PackagePath>fa-v4compatibility.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\FontAwesome6Brands_Regular_400.otf">
+      <PackagePath>FontAwesome6Brands_Regular_400.otf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
     </AppxPackagedFile>

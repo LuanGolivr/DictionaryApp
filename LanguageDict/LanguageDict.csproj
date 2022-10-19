@@ -49,6 +49,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\FontAwesome6Brands_Regular_400.otf" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	  <PackageReference Include="System.Text.Json" Version="6.0.6" />

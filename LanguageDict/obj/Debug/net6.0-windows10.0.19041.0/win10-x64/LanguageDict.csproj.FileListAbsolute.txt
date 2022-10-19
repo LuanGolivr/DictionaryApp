@@ -720,3 +720,8 @@ C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-wind
 C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\house_solid.scale-150.png
 C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\house_solid.scale-200.png
 C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\house_solid.scale-400.png
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-brands-400.ttf
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\FontAwesome6Brands_Regular_400.otf
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-regular-400.ttf
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-solid-900.ttf
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-v4compatibility.ttf

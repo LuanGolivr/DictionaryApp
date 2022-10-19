@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-10-19T17:58:48.273</Modified>
+      <Modified>2022-10-19T19:44:26.792</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-10-19T17:58:46.695</Modified>
+      <Modified>2022-10-19T19:44:24.885</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\LanguageDict.runtimeconfig.json">
       <PackagePath>LanguageDict.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\LanguageDict.dll">
       <PackagePath>LanguageDict.dll</PackagePath>
-      <Modified>2022-10-19T17:58:43.709</Modified>
+      <Modified>2022-10-19T19:44:22.853</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>LanguageDict.exe</PackagePath>
-      <Modified>2022-10-19T17:58:43.740</Modified>
+      <Modified>2022-10-19T19:44:22.994</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.10\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1071,7 +1071,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\LanguageDict.deps.json">
       <PackagePath>LanguageDict.deps.json</PackagePath>
-      <Modified>2022-10-19T17:58:48.085</Modified>
+      <Modified>2022-10-19T19:44:26.510</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.maui.controls.ref.win\6.0.541\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -1109,13 +1109,33 @@
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
       <Modified>2022-10-18T23:45:14.381</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-brands-400.ttf">
+      <PackagePath>fa-brands-400.ttf</PackagePath>
+      <Modified>2022-10-19T18:41:08.437</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-regular-400.ttf">
+      <PackagePath>fa-regular-400.ttf</PackagePath>
+      <Modified>2022-10-19T18:41:08.651</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-solid-900.ttf">
+      <PackagePath>fa-solid-900.ttf</PackagePath>
+      <Modified>2022-10-19T18:41:08.856</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-v4compatibility.ttf">
+      <PackagePath>fa-v4compatibility.ttf</PackagePath>
+      <Modified>2022-10-19T18:41:08.995</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\FontAwesome6Brands_Regular_400.otf">
+      <PackagePath>FontAwesome6Brands_Regular_400.otf</PackagePath>
+      <Modified>2022-10-19T19:04:26.851</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
-      <Modified>2022-10-18T23:45:14.318</Modified>
+      <Modified>2022-10-18T23:45:01.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
-      <Modified>2022-10-18T23:45:14.318</Modified>
+      <Modified>2022-10-18T23:45:01.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
