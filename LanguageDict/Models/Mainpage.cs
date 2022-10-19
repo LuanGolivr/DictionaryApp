@@ -13,15 +13,19 @@ namespace LanguageDict.Models
 
         public Mainpage()
         {
-            var currentDirect = AppDomain.CurrentDomain.BaseDirectory;
-            string sFile = System.IO.Path.Combine(currentDirect, @"dados.json");
-            dataPath = Path.GetFullPath(sFile);
-
-            sFile = System.IO.Path.Combine(currentDirect, @"selectedDict.json");
-            selectedPath = Path.GetFullPath(sFile);
-
+            getFilePath();
             AllDictionaries.Clear();
             Load();
+        }
+
+        private void getFilePath()
+        {
+            var currentDirect = AppDomain.CurrentDomain.BaseDirectory;
+            string sFile = Path.Combine(currentDirect, @"dados.json");
+            dataPath = Path.GetFullPath(sFile);
+
+            sFile = Path.Combine(currentDirect, @"selectedDict.json");
+            selectedPath = Path.GetFullPath(sFile);
         }
 
         public void Load()

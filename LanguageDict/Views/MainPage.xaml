@@ -45,10 +45,7 @@
                                     </StackLayout>
                                 </StackLayout>
                             </Border>
-                            <StackLayout>
-                                <Button BackgroundColor="Red" WidthRequest="55" HeightRequest="55" CornerRadius="100" HorizontalOptions="End"
-                                            FontFamily="FaSolid" Text="{x:Static models:FaSolidIcons.Xmark}" TextColor="White" BorderColor="Black"></Button>
-                            </StackLayout>
+                            
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
