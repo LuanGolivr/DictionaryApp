@@ -1,16 +1,25 @@
 ﻿using System.Collections.ObjectModel;
 using Newtonsoft.Json;
+using System.IO;
+using System.Reflection;
 
 namespace LanguageDict.Models
 {
     internal class Mainpage
     {
         public ObservableCollection<Dict> AllDictionaries { get; set; } = new ObservableCollection<Dict>();
-        public string dataPath = "C:\\Users\\luanG\\Documents\\GitHub\\DictionaryApp\\LanguageDict\\Data\\dados.json";
-        public string selectedPath = "C:\\Users\\luanG\\Documents\\GitHub\\DictionaryApp\\LanguageDict\\Data\\selectedDict.json";
+        public string dataPath;
+        public string selectedPath;
 
         public Mainpage()
         {
+            var currentDirect = AppDomain.CurrentDomain.BaseDirectory;
+            string sFile = System.IO.Path.Combine(currentDirect, @"dados.json");
+            dataPath = Path.GetFullPath(sFile);
+
+            sFile = System.IO.Path.Combine(currentDirect, @"selectedDict.json");
+            selectedPath = Path.GetFullPath(sFile);
+
             AllDictionaries.Clear();
             Load();
         }

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:LanguageDict.Models"
-             x:Class="LanguageDict.Views.MainPage">
+             x:Class="LanguageDict.Views.MainPage"
+             Background="#08522D">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddNewDict" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
@@ -23,21 +24,31 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10">
-                            <Border Stroke="Blue"
-                                    HeightRequest="300"
-                                    MaximumWidthRequest="300"
-                                    MinimumWidthRequest="200"
+                            <Border Stroke="Black"
+                                    HeightRequest="330"
+                                    MaximumWidthRequest="280"
+                                    MinimumWidthRequest="180"
                                     StrokeThickness="3"
-                                    StrokeShape="RoundRectangle 20">
-                                <StackLayout>
-                                    <Image Source="{Binding Image}" Aspect="AspectFit" MaximumHeightRequest="150" MaximumWidthRequest="300"/>
-                                    <Label Text="{Binding Target}" FontSize="15"  TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                    <Label Text="{Binding Native}" FontSize="15"  TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                    <BoxView Color="Blue" HeightRequest="2" HorizontalOptions="Fill" />
-                                    <Label Text="{Binding Description}" FontSize="Body"  TextColor="White" Padding="15"/>
-                                </StackLayout>
+                                    StrokeShape="RoundRectangle 20"
+                                    BackgroundColor="White">
 
+                                <Border.Shadow>
+                                    <Shadow Brush="Black" Offset="10,10" Opacity="0.8"/>
+                                </Border.Shadow>
+
+                                <StackLayout >
+                                    <StackLayout HeightRequest="280">
+                                        <Image Source="{Binding Image}" Aspect="AspectFit" MaximumHeightRequest="150" MaximumWidthRequest="300"/>
+                                        <Label Text="{Binding Target}" FontSize="25"  TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                        <BoxView Color="Black" HeightRequest="2" HorizontalOptions="Fill" />
+                                        <Label Text="{Binding Description}" FontSize="Body"  TextColor="Black" Padding="15"/>
+                                    </StackLayout>
+                                </StackLayout>
                             </Border>
+                            <StackLayout>
+                                <Button BackgroundColor="Red" WidthRequest="55" HeightRequest="55" CornerRadius="100" HorizontalOptions="End"
+                                            FontFamily="FaSolid" Text="{x:Static models:FaSolidIcons.Xmark}" TextColor="White" BorderColor="Black"></Button>
+                            </StackLayout>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
