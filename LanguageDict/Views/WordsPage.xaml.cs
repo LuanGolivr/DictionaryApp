@@ -43,105 +43,113 @@ public partial class WordsPage : ContentPage
 
         if (word != null)
         {
-            word.ToLower();
-            ans = currentTrie.AddWord(word);
-        }
+            ans = currentTrie.SearchWord(word);
 
-        if (ans)
-        {
-            WordSelected newWord = new WordSelected();
-            string transValue;
-            string descrValue;
-            string exampleValue;
+            if (!ans)
+            {
+                WordSelected newWord = new WordSelected();
+                Dictionary<string, string> allValues = new Dictionary<string, string>();
+                string transValue;
+                string descrValue;
+                string exampleValue;
 
-            Dictionary<string, string> allValues = new Dictionary<string, string>();
+                newWord.word = word;
 
-            newWord.word = word;
-
-            transValue = await DisplayPromptAsync("Translate", "Write down the translation of the word");
-            newWord.translate = transValue;
-            allValues.Add("translate", transValue);
-
-            descrValue = await DisplayPromptAsync("Description", "Write down the description of the word");
-            newWord.descr = descrValue;
-            allValues.Add("description", descrValue);
-
-            exampleValue = await DisplayPromptAsync("Example", "Write down an example of the word");
-            newWord.examples = exampleValue;
-            allValues.Add("examples", exampleValue);
-
-            if(!currentWord.ContainsKey(word)) {
-                currentWord.Add(word, allValues);
-                current.AllWordsSelected.Add(newWord);
-
-                for (int i = 0; i < mainPage.AllDictionaries.Count; i++)
+                transValue = await DisplayPromptAsync("Translate", "Write down the translation of the word");
+                if (transValue != null)
                 {
-                    if (currentDict[0].Target == mainPage.AllDictionaries[i].Target && currentDict[0].Native == mainPage.AllDictionaries[i].Native)
+                    newWord.translate = transValue;
+                    allValues.Add("translate", transValue);
+                    descrValue = await DisplayPromptAsync("Description", "Write down the description of the word");
+                    
+                    if(descrValue != null)
                     {
-                        mainPage.AllDictionaries[i].words = currentWord;
-                        mainPage.AllDictionaries[i].Trie = currentTrie;
-                        string jsonFile = JsonConvert.SerializeObject(mainPage.AllDictionaries);
+                        newWord.descr = descrValue;
+                        allValues.Add("description", descrValue);
+                        exampleValue = await DisplayPromptAsync("Example", "Write down an example of the word");
 
-                        mainPage.WriteData(jsonFile, mainPage.dataPath);
+                        if (exampleValue != null)
+                        {
+                            newWord.examples = exampleValue;
+                            allValues.Add("examples", exampleValue);
+
+                            if (!currentWord.ContainsKey(word))
+                            {
+                                currentWord.Add(word, allValues);
+                                current.AllWordsSelected.Add(newWord);
+                                currentTrie.AddWord(word);
+                                for (int i = 0; i < mainPage.AllDictionaries.Count; i++)
+                                {
+                                    if (currentDict[0].Target == mainPage.AllDictionaries[i].Target && currentDict[0].Native == mainPage.AllDictionaries[i].Native)
+                                    {
+                                        mainPage.AllDictionaries[i].words = currentWord;
+                                        mainPage.AllDictionaries[i].Trie = currentTrie;
+                                        string jsonFile = JsonConvert.SerializeObject(mainPage.AllDictionaries);
+
+                                        mainPage.WriteData(jsonFile, mainPage.dataPath);
+                                    }
+                                }
+                                await DisplayAlert("Word", "Word inserted successfully", "OK");
+                            }
+                        }
                     }
-                }
-
-                await DisplayAlert("Word","Word inserted successfully", "OK");
+                } 
             }
-        }else
-        {
-            await DisplayAlert("Word", "The word has already been inserted", "OK");
+            else
+            {
+                await DisplayAlert("Word", "The word has already been inserted", "OK");
+            }
         }
     }
 
     private async void RemoveWord(object sender, EventArgs e)
     {
         string word = await DisplayPromptAsync("Word", "Write down the word you want to remove from the dictionary", "OK");
-        word.ToLower();
         bool ans = false;
 
         if (word != null)
         {
             ans = currentTrie.RemoveWord(word);
-        }
 
-        if (ans)
-        {
-            if (currentWord.ContainsKey(word))
+            if (ans)
             {
-                WordSelected remWord = new WordSelected();
-                var element = currentWord[word];
-                remWord.word = word;
-                remWord.translate = element["translate"];
-                remWord.descr = element["description"];
-                remWord.examples = element["examples"];
-
-                currentWord.Remove(word);
-
-                for (int i = 0; i < current.AllWordsSelected.Count; i++)
+                if (currentWord.ContainsKey(word))
                 {
-                    if (current.AllWordsSelected[i].word == remWord.word)
+                    WordSelected remWord = new WordSelected();
+                    var element = currentWord[word];
+                    remWord.word = word;
+                    remWord.translate = element["translate"];
+                    remWord.descr = element["description"];
+                    remWord.examples = element["examples"];
+
+                    currentWord.Remove(word);
+
+                    for (int i = 0; i < current.AllWordsSelected.Count; i++)
                     {
-                        current.AllWordsSelected.RemoveAt(i);
+                        if (current.AllWordsSelected[i].word == remWord.word)
+                        {
+                            current.AllWordsSelected.RemoveAt(i);
+                        }
+                    }
+
+                    for (int i = 0; i < mainPage.AllDictionaries.Count; i++)
+                    {
+                        if (currentDict[0].Target == mainPage.AllDictionaries[i].Target && currentDict[0].Native == mainPage.AllDictionaries[i].Native)
+                        {
+                            mainPage.AllDictionaries[i].words = currentWord;
+                            mainPage.AllDictionaries[i].Trie = currentTrie;
+                            string jsonFile = JsonConvert.SerializeObject(mainPage.AllDictionaries);
+
+                            mainPage.WriteData(jsonFile, mainPage.dataPath);
+                        }
                     }
                 }
 
-                for (int i = 0; i < mainPage.AllDictionaries.Count; i++)
-                {
-                    if (currentDict[0].Target == mainPage.AllDictionaries[i].Target && currentDict[0].Native == mainPage.AllDictionaries[i].Native)
-                    {
-                        mainPage.AllDictionaries[i].words = currentWord;
-                        mainPage.AllDictionaries[i].Trie = currentTrie;
-                        string jsonFile = JsonConvert.SerializeObject(mainPage.AllDictionaries);
-
-                        mainPage.WriteData(jsonFile, mainPage.dataPath);
-                    }
-                }
             }
-
-        }else
-        {
-            await DisplayAlert("Word", "There is not this word in the dictionary.", "OK");
+            else
+            {
+                await DisplayAlert("Word", "There is not this word in the dictionary.", "OK");
+            }
         }
     }
 
@@ -157,7 +165,8 @@ public partial class WordsPage : ContentPage
             {
                 foreach(var item in currentWord)
                 {
-                    if(item.Key == word)
+                    
+                    if(item.Key.ToLower() == word.ToLower())
                     {
                         searchWord.Text = item.Key;
                         int i = 0;

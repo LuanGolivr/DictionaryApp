@@ -1,8 +1,6 @@
 ﻿using LanguageDict.Models;
-using System.Collections.ObjectModel;
 using Newtonsoft.Json;
-using CommunityToolkit.Mvvm.ComponentModel;
-using System.Collections.Generic;
+
 
 namespace LanguageDict.Views;
 

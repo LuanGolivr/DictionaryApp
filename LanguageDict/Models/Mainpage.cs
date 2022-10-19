@@ -6,8 +6,8 @@ namespace LanguageDict.Models
     internal class Mainpage
     {
         public ObservableCollection<Dict> AllDictionaries { get; set; } = new ObservableCollection<Dict>();
-        public string dataPath = "C:\\Users\\luanG\\source\\repos\\LanguageDict\\LanguageDict\\Data\\dados.json";
-        public string selectedPath = "C:\\Users\\luanG\\source\\repos\\LanguageDict\\LanguageDict\\Data\\selectedDict.json";
+        public string dataPath = "C:\\Users\\luanG\\Documents\\GitHub\\DictionaryApp\\LanguageDict\\Data\\dados.json";
+        public string selectedPath = "C:\\Users\\luanG\\Documents\\GitHub\\DictionaryApp\\LanguageDict\\Data\\selectedDict.json";
 
         public Mainpage()
         {
