@@ -53,13 +53,14 @@ namespace LanguageDict.Models
         {
             var database = _client.GetDatabase("donetWebServices");
             var collection = database.GetCollection<BsonDocument>("Products");
+            int[] testes {1,2,3}
 
             var doc = new BsonDocument
             {
                 { "Word", "Test" },
                 { "Translation", "Test translation" },
                 { "Meaning", "Test meaning" },
-                {"Examples", ["example 1","example 2","example 3"]},
+                {"Examples", testes},
             };
 
             try
