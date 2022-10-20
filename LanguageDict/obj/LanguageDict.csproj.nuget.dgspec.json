@@ -66,10 +66,6 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "Microsoft.AspNetCore.Mvc.Abstractions": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.541, )",
@@ -196,10 +192,6 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "Microsoft.AspNetCore.Mvc.Abstractions": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.541, )",
@@ -306,10 +298,6 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.0.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Abstractions": {
-              "target": "Package",
-              "version": "[2.2.0, )"
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
@@ -418,10 +406,6 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.0.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Abstractions": {
-              "target": "Package",
-              "version": "[2.2.0, )"
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
