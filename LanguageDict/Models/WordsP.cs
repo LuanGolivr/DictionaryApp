@@ -12,7 +12,7 @@ namespace LanguageDict.Models
     internal class WordsP
     {
         public ObservableCollection<WordSelected> AllWordsSelected { get; set; } = new ObservableCollection<WordSelected>();
-        private Mainpage mainP = new Mainpage();
+        private Main mainP = new Main();
 
         public WordsP()
         {

@@ -1,14 +1,12 @@
 using LanguageDict.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace LanguageDict.Views;
 
 public partial class WordsPage : ContentPage
 {
     private WordsP current;
-    private Mainpage mainPage = new Mainpage();
+    private Main mainPage = new Main();
     private List<Dict> currentDict = new List<Dict>();
 
     private Trie currentTrie = new Trie();
