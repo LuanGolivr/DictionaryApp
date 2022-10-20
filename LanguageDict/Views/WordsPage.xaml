@@ -6,13 +6,14 @@
              Title="Dictionary">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddNewWord" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
-        <ToolbarItem Text="Remove" Clicked="RemoveWord" IconImageSource="{FontImage Glyph= 'x',Color=White, Size= 20}" />
+        <ToolbarItem Text="Add"  IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
+        <ToolbarItem Text="Remove" IconImageSource="{FontImage Glyph= 'x',Color=White, Size= 20}" />
     </ContentPage.ToolbarItems>
 
     <ScrollView>
         <VerticalStackLayout>
-        <SearchBar x:Name="searchBar" SearchButtonPressed="SearchWord" Placeholder="Search a word" IsTextPredictionEnabled="True" />
+            <!--SearchButtonPressed="SearchWord"-->
+        <SearchBar x:Name="searchBar" Placeholder="Search a word" IsTextPredictionEnabled="True" />
         <Label Text="Welcome to your Dictionary, take a look on the words you added on the dictionary !!"
                    Margin="40"
                    FontSize="27"

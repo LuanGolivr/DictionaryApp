@@ -726,3 +726,12 @@ C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-wind
 C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-solid-900.ttf
 C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\fa-v4compatibility.ttf
 C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\general2.scale-100.jpg
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\DnsClient.dll
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MongoDB.Bson.dll
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MongoDB.Driver.dll
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MongoDB.Driver.Core.dll
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MongoDB.Libmongocrypt.dll
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\SharpCompress.dll
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Snappier.dll
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\ZstdSharp.dll
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mongocrypt.dll

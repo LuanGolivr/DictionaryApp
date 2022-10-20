@@ -16,24 +16,9 @@ public partial class WordsPage : ContentPage
     {
         InitializeComponent();
         BindingContext = new WordsP();
-
-        if(BindingContext is WordsP w)
-        {
-            current = w;
-        }
-
-        currentDict = mainPage.ReadData(mainPage.selectedPath);
-
-        for(int i = 0; i < mainPage.AllDictionaries.Count; i++) {
-
-            if (currentDict[0].Target == mainPage.AllDictionaries[i].Target && currentDict[0].Native == mainPage.AllDictionaries[i].Native)
-            {
-                currentWord = mainPage.AllDictionaries[i].words;
-                currentTrie = mainPage.AllDictionaries[i].Trie;
-            }
-        }
     }
 
+    /*
     private async void AddNewWord(object sender, EventArgs e)
     {
         string word = await DisplayPromptAsync("Word", "Write down the word you want to insert in the dictionary: ");
@@ -195,4 +180,5 @@ public partial class WordsPage : ContentPage
             searchTable.Opacity = 0;
         }
     }
+    */
 }
