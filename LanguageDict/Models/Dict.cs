@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.ObjectModel;
+
 namespace LanguageDict.Models
 {
     partial class Dict
@@ -8,14 +10,15 @@ namespace LanguageDict.Models
         public string Image { get; set; }
         public string Description => "This is a word dictionary from the language " + Target + " to the language " + Native + ".";
         public Trie Trie { get; set; }
-
-        public Dictionary<string, Dictionary<string, string>> words = new Dictionary<string, Dictionary<string, string>>(); 
+        public ObservableCollection<Words> allWorlds { get; set;}
 
 
         public Dict()
         {
             Trie = new Trie();
         }
+
+
 
     }
 }
