@@ -5,7 +5,7 @@ namespace LanguageDict.Models
 {
     internal class Main
     {
-        public ObservableCollection<Dict> AllDictionaries { get; set; } = new ObservableCollection<Dict>();
+        public ObservableCollection<Dict> AllDictionaries { get; set; }
         public DataBs serverConnection { get; set; }
 
         public Main()

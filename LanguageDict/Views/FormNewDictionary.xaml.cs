@@ -4,9 +4,11 @@ namespace LanguageDict.Views;
 
 public partial class FormNewDictionary : ContentPage
 {
+	private Main instMain { get; set; }
 	public FormNewDictionary()
 	{
 		InitializeComponent();
+		instMain = new Main();
 	}
 
     private async void CreateNewDict(object sender, EventArgs e)
@@ -21,6 +23,11 @@ public partial class FormNewDictionary : ContentPage
 			nDict.Target = targetL;
 			nDict.Native = nativeL;
 			nDict.Image = fileImage.FullPath;
+
+			if (instMain.serverConnection.addNewDict(nDict))
+			{
+                instMain.AllDictionaries.Add(nDict);
+            }
 
 			await Shell.Current.GoToAsync(nameof(Views.MainPage));
 		}

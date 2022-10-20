@@ -1,5 +1,8 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.IO;
 using MongoDB.Driver;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace LanguageDict.Models
 {
@@ -22,9 +25,18 @@ namespace LanguageDict.Models
             return collection;
         }
 
-        public void addNewDict(Dict dictionary)
+        public bool addNewDict(Dict dictionary)
         {
             var collection = getCollection("Dictionaries");
+                .
+            var document = new BsonDocument
+            {
+                {"Native", dictionary.Native},
+                {"Target", dictionary.Target},
+                {"Description", dictionary.Description},
+            };
+
+            return false;
         }
 
         public void removeDict(Dict dictionary)
