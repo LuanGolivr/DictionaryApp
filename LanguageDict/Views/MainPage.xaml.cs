@@ -17,6 +17,7 @@ public partial class MainPage : ContentPage
 
 	private async void AddNewDict(object sender, EventArgs e)
 	{
+		await Shell.Current.GoToAsync(nameof(FormNewDictionary));
 		bool cont = true;
         string targetLang = await DisplayPromptAsync("Target Language", "What's the language you are learning ?");
 		string nativeLang = "";
