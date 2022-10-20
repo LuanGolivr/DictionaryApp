@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace LanguageDict.Models
@@ -23,6 +22,18 @@ namespace LanguageDict.Models
             return collection;
         }
 
+        public void addNewDict(Dict dictionary)
+        {
+            var collection = getCollection("Dictionaries");
+        }
+
+        public void removeDict(Dict dictionary)
+        {
+            var collection = getCollection("Dictionaries");
+        }
+
+
+
         public BsonDocument addNewWord(string word)
         {
 
@@ -45,14 +56,10 @@ namespace LanguageDict.Models
 
             var doc = new BsonDocument
             {
-                { "name", "MongoDB" },
-                { "type", "Database" },
-                { "count", 1 },
-                { "info", new BsonDocument
-                    {
-                        { "x", 203 },
-                        { "y", 102 }
-                    }}
+                { "Word", "Test" },
+                { "Translation", "Test translation" },
+                { "Meaning", "Test meaning" },
+                {"Examples", ["example 1","example 2","example 3"]},
             };
 
             try
