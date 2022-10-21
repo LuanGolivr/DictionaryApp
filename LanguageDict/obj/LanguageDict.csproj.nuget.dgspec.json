@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0-rc.2.22472.3, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.541, )",
@@ -192,6 +196,10 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0-rc.2.22472.3, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.541, )",
@@ -298,6 +306,10 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0-rc.2.22472.3, )"
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
@@ -406,6 +418,10 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0-rc.2.22472.3, )"
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",

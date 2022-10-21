@@ -1,8 +1,7 @@
 ﻿using MongoDB.Bson;
-using MongoDB.Bson.IO;
 using MongoDB.Driver;
-using Newtonsoft.Json;
-using System.Text.Json.Serialization;
+using System.Collections.ObjectModel;
+using System.Text.Json;
 
 namespace LanguageDict.Models
 {
@@ -28,12 +27,17 @@ namespace LanguageDict.Models
         public bool addNewDict(Dict dictionary)
         {
             var collection = getCollection("Dictionaries");
-                .
+
+            string strTrie = JsonSerializer.Serialize<Trie>(dictionary.Trie);
+            string strAllWords = JsonSerializer.Serialize<ObservableCollection<Words>>(dictionary.allWorlds);
+
             var document = new BsonDocument
             {
                 {"Native", dictionary.Native},
                 {"Target", dictionary.Target},
                 {"Description", dictionary.Description},
+                {"Trie", strTrie},
+                {"AllWords", strAllWords}
             };
 
             return false;
