@@ -724,17 +724,32 @@
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\dnsclient\1.6.1\lib\net5.0\DnsClient.dll">
       <PackagePath>DnsClient.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.configuration\6.0.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll">
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.configuration\7.0.0-rc.2.22472.3\lib\net6.0\Microsoft.Extensions.Configuration.dll">
       <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.configuration.abstractions\6.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll">
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.configuration.abstractions\7.0.0-rc.2.22472.3\lib\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll">
       <PackagePath>Microsoft.Extensions.Configuration.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.configuration.fileextensions\7.0.0-rc.2.22472.3\lib\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.FileExtensions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.configuration.json\7.0.0-rc.2.22472.3\lib\net6.0\Microsoft.Extensions.Configuration.Json.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.Json.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.dependencyinjection\6.0.0\lib\net6.0\Microsoft.Extensions.DependencyInjection.dll">
       <PackagePath>Microsoft.Extensions.DependencyInjection.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\6.0.0\lib\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
       <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.fileproviders.abstractions\7.0.0-rc.2.22472.3\lib\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.FileProviders.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.fileproviders.physical\7.0.0-rc.2.22472.3\lib\net6.0\Microsoft.Extensions.FileProviders.Physical.dll">
+      <PackagePath>Microsoft.Extensions.FileProviders.Physical.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.filesystemglobbing\7.0.0-rc.2.22472.3\lib\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll">
+      <PackagePath>Microsoft.Extensions.FileSystemGlobbing.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.logging\6.0.0\lib\netstandard2.1\Microsoft.Extensions.Logging.dll">
       <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
@@ -745,7 +760,7 @@
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.options\6.0.0\lib\netstandard2.1\Microsoft.Extensions.Options.dll">
       <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.primitives\6.0.0\lib\net6.0\Microsoft.Extensions.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.extensions.primitives\7.0.0-rc.2.22472.3\lib\net6.0\Microsoft.Extensions.Primitives.dll">
       <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.graphics.win2d\1.0.3.1\lib\net5.0-windows10.0.18362.0\Microsoft.Graphics.Canvas.Interop.dll">
@@ -873,6 +888,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\FontAwesome6Brands_Regular_400.otf">
       <PackagePath>FontAwesome6Brands_Regular_400.otf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-Regular.ttf">
+      <PackagePath>Montserrat-Regular.ttf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -1017,6 +1035,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\bible_icon.scale-100.png">
+      <PackagePath>bible_icon.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>

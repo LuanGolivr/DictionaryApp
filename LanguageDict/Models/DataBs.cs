@@ -50,17 +50,17 @@ namespace LanguageDict.Models
 
 
 
-        public BsonDocument addNewWord(string word)
+        public void addNewWord(string word)
         {
 
         }
 
-        public BsonDocument removeWord(string word)
+        public void removeWord(string word)
         {
 
         }
 
-        public BsonDocument searchWord(string word)
+        public void searchWord(string word)
         {
 
         }
@@ -69,14 +69,12 @@ namespace LanguageDict.Models
         {
             var database = _client.GetDatabase("donetWebServices");
             var collection = database.GetCollection<BsonDocument>("Products");
-            int[] testes {1,2,3}
 
             var doc = new BsonDocument
             {
                 { "Word", "Test" },
                 { "Translation", "Test translation" },
                 { "Meaning", "Test meaning" },
-                {"Examples", testes},
             };
 
             try

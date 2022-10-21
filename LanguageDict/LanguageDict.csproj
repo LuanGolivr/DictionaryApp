@@ -50,10 +50,12 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\FontAwesome6Brands_Regular_400.otf" />
+	  <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0-rc.2.22472.3" />
 	  <PackageReference Include="MongoDB.Bson" Version="2.18.0" />
 	  <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
 	  <PackageReference Include="MongoDB.Driver.Core" Version="2.18.0" />

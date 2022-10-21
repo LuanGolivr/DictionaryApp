@@ -5,16 +5,43 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:LanguageDict.Models"
     xmlns:views="clr-namespace:LanguageDict.Views"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="Locked" FlyoutBackgroundColor="#202020">
 
-    <ShellContent
-        Title="My Dictionaries"
-        ContentTemplate="{DataTemplate views:MainPage}"
-        Route="MainPage" />
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="50,*" Padding="10">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommomStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#323232"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+                <Label FontFamily="FaRegular" Text="{Binding Icon}" FontAutoScalingEnabled="True" HorizontalOptions="Center" TextColor="White"/>
+                <Label FontFamily="Montserrat" FontAutoScalingEnabled="True" Grid.Column="1" Text="{Binding Title}" TextColor="White"/>
+            </Grid> 
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    
+    <FlyoutItem Title="My Dictionaries" Icon="{x:Static models:FaRegularIcons.Folder}">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:MainPage}" Route="MainPage" />
+        </Tab>
+    </FlyoutItem>
 
-    <ShellContent
-        Title="Word of the day"
-        ContentTemplate="{DataTemplate views:WordsPage}"
-        Route="Dictionary" />
+    <FlyoutItem Title="Word of the day" Icon="{x:Static models:FaRegularIcons.Message}">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:WordsPage}" Route="Dictionary" />
+        </Tab>
+    </FlyoutItem>
 
 </Shell>
