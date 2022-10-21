@@ -3,14 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:LanguageDict.Models"
              x:Class="LanguageDict.Views.MainPage"
-             Background="#08522D">
+             Background="#272727">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddNewDict" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
+        <ToolbarItem Text="Add" Clicked="AddNewDict" IconImageSource="{FontImage Glyph ='+', Color=White, Size=22}"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <StackLayout>
+        <Grid Padding="10" ColumnDefinitions="*,*">
+            
+            <StackLayout Grid.Column="0" Padding="10">
+                <Border Stroke="Black" StrokeThickness="0.3" Margin="10" MaximumWidthRequest="450" BackgroundColor="#323232" HorizontalOptions="Start" StrokeShape="RoundRectangle 20">
+
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="10,10" Opacity="0.7"/>
+                    </Border.Shadow>
+
+                    <StackLayout>
+                        <Grid Padding="10" ColumnDefinitions="*,*">
+                            <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Start">
+                                <Label FontFamily="FaSolid" FontSize="18" Text="{x:Static models:FaSolidIcons.Book}" TextColor="White" Padding="10"/>
+                                <Label Text="English" HorizontalOptions="StartAndExpand" FontSize="18" Padding="10"/>
+                            </HorizontalStackLayout>
+                            <StackLayout Grid.Column="1" HorizontalOptions="End">
+                                <Button FontFamily="FaRegular" Text="{x:Static models:FaRegularIcons.x}" TextColor="White" FontSize="11" HorizontalOptions="End" BackgroundColor="Transparent" BorderWidth="0"/>
+                            </StackLayout>
+                        </Grid>
+                        <Label Text="This is a word dictionary from the language English to the language Portuguese." FontSize="13" Padding="10"/>
+                    </StackLayout>
+                </Border>
+
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" Padding="10">
+                
+            </StackLayout>
+            <!--
             <CollectionView x:Name="dictCollection"
                 Margin="50"
                 ItemsSource="{Binding AllDictionaries}"
@@ -24,33 +52,12 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10">
-                            <Border Stroke="Black"
-                                    HeightRequest="330"
-                                    MaximumWidthRequest="280"
-                                    MinimumWidthRequest="180"
-                                    StrokeThickness="3"
-                                    StrokeShape="RoundRectangle 20"
-                                    BackgroundColor="White">
-
-                                <Border.Shadow>
-                                    <Shadow Brush="Black" Offset="10,10" Opacity="0.8"/>
-                                </Border.Shadow>
-
-                                <StackLayout >
-                                    <StackLayout HeightRequest="280">
-                                        <Image Source="{Binding Image}" Aspect="AspectFit" MaximumHeightRequest="150" MaximumWidthRequest="300"/>
-                                        <Label Text="{Binding Target}" FontSize="25"  TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                        <BoxView Color="Black" HeightRequest="2" HorizontalOptions="Fill" />
-                                        <Label Text="{Binding Description}" FontSize="Body"  TextColor="Black" Padding="15"/>
-                                    </StackLayout>
-                                </StackLayout>
-                            </Border>
-                            
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
 
             </CollectionView>
-        </StackLayout>
+            -->
+        </Grid>
     </ScrollView>
 </ContentPage>

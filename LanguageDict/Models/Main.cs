@@ -11,7 +11,7 @@ namespace LanguageDict.Models
         public Main()
         {
             makeConnectionServer();
-            AllDictionaries.Clear();
+            //AllDictionaries.Clear();
         }
 
         private void makeConnectionServer()
