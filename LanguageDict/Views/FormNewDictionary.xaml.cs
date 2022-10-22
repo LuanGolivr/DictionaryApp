@@ -13,16 +13,15 @@ public partial class FormNewDictionary : ContentPage
 
     private async void CreateNewDict(object sender, EventArgs e)
     {
+		/*
 		string targetL = TargetL.Text;
 		string nativeL = NativeL.Text;
-        var fileImage = await FilePicker.Default.PickAsync();
 
 		if( targetL != null && nativeL != null)
 		{
 			Dict nDict = new Dict();
 			nDict.Target = targetL;
 			nDict.Native = nativeL;
-			nDict.Image = fileImage.FullPath;
 
 			if (instMain.serverConnection.addNewDict(nDict))
 			{
@@ -31,7 +30,7 @@ public partial class FormNewDictionary : ContentPage
 
 			await Shell.Current.GoToAsync(nameof(Views.MainPage));
 		}
-
+		*/
 
     }
 }

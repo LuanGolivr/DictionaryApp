@@ -11,6 +11,9 @@
     <MauiXaml Update="Views\FormNewDictionary.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\WordOfTheDay.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\WordsPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

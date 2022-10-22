@@ -11,8 +11,8 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 
 		mainInst = new Main();
-		CheckServerConnection();
-        BindingContext = mainInst;
+		//CheckServerConnection();
+        BindingContext = new Main();
     }
 
 

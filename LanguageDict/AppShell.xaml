@@ -38,9 +38,21 @@
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="Word of the day" Icon="{x:Static models:FaRegularIcons.Message}">
+    <FlyoutItem Title="Word of the day" Icon="{x:Static models:FaRegularIcons.Bookmark}">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:WordOfTheDay}" Route="WordOfTheDay" />
+        </Tab>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Selected Dictionary" Icon="{x:Static models:FaRegularIcons.Message}">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate views:WordsPage}" Route="Dictionary" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Form">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:FormNewDictionary}" Route="Form" />
         </Tab>
     </FlyoutItem>
 

@@ -5,17 +5,19 @@ namespace LanguageDict.Views;
 
 public partial class WordsPage : ContentPage
 {
+    /*
     private WordsP current;
     private Main mainPage = new Main();
     private List<Dict> currentDict = new List<Dict>();
 
     private Trie currentTrie = new Trie();
     private Dictionary<string, Dictionary<string, string>> currentWord = new Dictionary<string, Dictionary<string, string>>();
+    */
 
     public WordsPage()
     {
         InitializeComponent();
-        BindingContext = new WordsP();
+        //BindingContext = new WordsP();
     }
 
     /*

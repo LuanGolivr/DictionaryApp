@@ -15,7 +15,7 @@ namespace LanguageDict.Models
         {
             _client = new MongoClient("mongodb://localhost:27017");
             _dataBase = _client.GetDatabase("dotnetWebServices");
-            Test();
+            //Test();
         }
 
         private IMongoCollection<BsonDocument> getCollection(string collec)

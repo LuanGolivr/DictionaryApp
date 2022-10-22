@@ -9,9 +9,26 @@
         <ToolbarItem Text="Add" Clicked="AddNewDict" IconImageSource="{FontImage Glyph ='+', Color=White, Size=22}"/>
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommomStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.5" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    
     <ScrollView>
-        <Grid Padding="10" ColumnDefinitions="*,*">
-            
+        <Grid Padding="10" ColumnDefinitions="*">
+            <!--
             <StackLayout Grid.Column="0" Padding="10">
                 <Border Stroke="Black" StrokeThickness="0.3" Margin="10" MaximumWidthRequest="450" BackgroundColor="#323232" HorizontalOptions="Start" StrokeShape="RoundRectangle 20">
 
@@ -38,26 +55,61 @@
             <StackLayout Grid.Column="1" Padding="10">
                 
             </StackLayout>
-            <!--
+            -->
             <CollectionView x:Name="dictCollection"
-                Margin="50"
-                ItemsSource="{Binding AllDictionaries}"
-                SelectionMode="Single"
-                SelectionChanged="DictCollection_SelectionChanged">
+                            ItemsSource="{Binding AllDictionaries}"
+                            SelectionMode="Single"
+                            SelectionChanged="DictCollection_SelectionChanged">
 
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Span="4" Orientation="Vertical"/>
+                    <GridItemsLayout Span="2" Orientation="Vertical" />
                 </CollectionView.ItemsLayout>
-
+                
+                <CollectionView.EmptyView >
+                    <Label Text="You have not added any dictionaries yet !!" FontSize="Title" TextColor="White"  HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin="20"/>
+                </CollectionView.EmptyView>
+                
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="10">
-                        </Grid>
+                    <DataTemplate x:DataType="models:Dict">
+                        <ContentView Padding="10">
+                            <Border Stroke="Black"
+                                    StrokeThickness="0.3"
+                                    Margin="10"
+                                    MaximumWidthRequest="450"
+                                    BackgroundColor="#323232"
+                                    HorizontalOptions="Start"
+                                    StrokeShape="RoundRectangle 20">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="Black" Offset="10,10" Opacity="0.7" />
+                                </Border.Shadow>
+
+                                <StackLayout>
+                                    <Grid Padding="10" ColumnDefinitions="*, *">
+                                        <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Start">
+                                            <Label FontFamily="FaSolid" FontSize="18" Text="{x:Static models:FaSolidIcons.Book}" TextColor="White" Padding="10"/>
+                                            <Label Text="{Binding Target}" HorizontalOptions="StartAndExpand" FontSize="18" Padding="10"/>
+                                        </HorizontalStackLayout>
+                                        <StackLayout Grid.Column="1" HorizontalOptions="End">
+                                            <Button FontFamily="FaRegular"
+                                                    Text="{x:Static models:FaRegularIcons.x}"
+                                                    TextColor="White"
+                                                    FontSize="11"
+                                                    HorizontalOptions="End"
+                                                    BackgroundColor="Transparent"
+                                                    BorderWidth="0"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Label Text="{Binding Description}" FontSize="13" Padding="10"/>
+                                </StackLayout>
+                                
+                            </Border>
+                        </ContentView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-
+                
             </CollectionView>
-            -->
+            
         </Grid>
     </ScrollView>
 </ContentPage>

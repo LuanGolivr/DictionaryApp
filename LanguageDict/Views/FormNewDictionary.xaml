@@ -7,8 +7,8 @@
 
     <ScrollView>
         <VerticalStackLayout Margin="20" Padding="10">
-            <Entry x:Name="TargetL" Placeholder="Insert here the language you're learning!!" PlaceholderColor="White"/>
-            <Entry x:Name="NativeL" Placeholder="Insert here the language you're going to use as a suport !!" PlaceholderColor="White" />
+            <Entry x:Name="TargetL" Placeholder="Insert here the language you're learning!!" PlaceholderColor="White" BackgroundColor="#272727"/>
+            <Entry x:Name="NativeL" Placeholder="Insert here the language you're going to use as a suport !!" PlaceholderColor="White"  Background="#272727"/>
             <Button Clicked="CreateNewDict" BackgroundColor="#08522D" Text="Create" CornerRadius="20" MaximumWidthRequest="500" TextColor="White" BorderColor="Black"></Button>
         </VerticalStackLayout>
     </ScrollView>
