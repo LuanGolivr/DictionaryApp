@@ -32,27 +32,19 @@
                                     MaximumWidthRequest="450"
                                     BackgroundColor="#323232"
                                     HorizontalOptions="Start"
-                                    StrokeShape="RoundRectangle 20">
+                                    StrokeShape="RoundRectangle 20"
+                                    HandlerChanged="Border_HandlerChanged">
 
                                 <Border.Shadow>
                                     <Shadow Brush="Black" Offset="10,10" Opacity="0.7" />
                                 </Border.Shadow>
 
                                 <StackLayout>
-                                    <Grid Padding="10" ColumnDefinitions="*, *">
+                                    <Grid Padding="1" ColumnDefinitions="*, *">
                                         <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Start">
                                             <Label FontFamily="FaSolid" FontSize="18" Text="{x:Static models:FaSolidIcons.Book}" TextColor="White" Padding="10"/>
                                             <Label Text="{Binding Target}" HorizontalOptions="StartAndExpand" FontSize="18" Padding="10"/>
                                         </HorizontalStackLayout>
-                                        <StackLayout Grid.Column="1" HorizontalOptions="End">
-                                            <Button FontFamily="FaRegular"
-                                                    Text="{x:Static models:FaRegularIcons.x}"
-                                                    TextColor="White"
-                                                    FontSize="11"
-                                                    HorizontalOptions="End"
-                                                    BackgroundColor="Transparent"
-                                                    BorderWidth="0"/>
-                                        </StackLayout>
                                     </Grid>
                                     <Label Text="{Binding Description}" FontSize="13" Padding="10"/>
                                 </StackLayout>

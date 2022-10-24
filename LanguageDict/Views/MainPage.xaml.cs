@@ -23,7 +23,7 @@ public partial class MainPage : ContentPage
 
         if (targetL != null && nativeL != null)
         {
-            Dict nDict = new Dict(nativeL, targetL);
+            Dict nDict = new Dict(nativeL.ToUpper(), targetL.ToUpper());
             bool result = mainInst.serverConnection.addNewDict(nDict);
 
 
@@ -47,17 +47,15 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private async void RemoveDict(object sender, EventArgs e)
+    private async void RemoveDict(Dict selectedDict)
     {
-		
-    }
-
-    private async void DictCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-		if(e.CurrentSelection.Count != 0)
-		{
-            selecDict = (Dict)e.CurrentSelection[0];
-			
+        if (mainInst.serverConnection.removeDict(selectedDict))
+        {
+            await DisplayAlert("Remove Dict", "The selected dictionary was deleted", "OK");
+            mainInst.AllDictionaries.Remove(selectedDict);
+        }else
+        {
+            await DisplayAlert("Remove Dict", "It wasn't possible to delete the dictionary , try again !!", "OK");
         }
     }
 
@@ -69,9 +67,41 @@ public partial class MainPage : ContentPage
         Form.Opacity = 1;
     }
 
-    private void dictCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private async void dictCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        if(e.CurrentSelection.Count != 0)
+        {
+            selecDict = (Dict)e.CurrentSelection[0];
 
+            if (selecDict != null)
+            {
+                string action = await DisplayActionSheet("Action", "Cancel", null, "Get into it", "Remove dictionary");
+
+                if (action == "Remove dictionary")
+                {
+                    RemoveDict(selecDict);
+                }
+                else if (action == "Get into it")
+                {
+                    await Shell.Current.GoToAsync(nameof(WordsPage));
+                }
+                else
+                {
+                    selecDict = null;
+                    dictCollection.SelectionMode = SelectionMode.None;
+                }
+            }
+
+           
+        }
+    }
+
+    private void Border_HandlerChanged(object sender, EventArgs e)
+    {
+        if(dictCollection.SelectionMode == SelectionMode.None)
+        {
+            dictCollection.SelectionMode = SelectionMode.Single;
+        }
     }
 }
 

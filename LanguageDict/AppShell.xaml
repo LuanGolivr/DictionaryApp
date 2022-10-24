@@ -44,10 +44,4 @@
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="Selected Dictionary" Icon="{x:Static models:FaRegularIcons.Message}">
-        <Tab>
-            <ShellContent ContentTemplate="{DataTemplate views:WordsPage}" Route="Dictionary" />
-        </Tab>
-    </FlyoutItem>
-
 </Shell>

@@ -44,9 +44,19 @@ namespace LanguageDict.Models
             return false;
         }
 
-        public void removeDict(Dict dictionary)
+        public bool removeDict(Dict dictionary)
         {
             var collection = getCollection("Dictionaries");
+            bool result = searchDict(dictionary.Target);
+
+            if (result)
+            {
+                var filter = Builders<BsonDocument>.Filter.Eq("Target", dictionary.Target);
+                collection.DeleteOne(filter);
+                return true;
+            }
+
+            return false;
         }
 
         public bool searchDict(string lang)

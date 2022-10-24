@@ -6,7 +6,7 @@ namespace LanguageDict.Models
     {
         public string Native { get; set; }
         public string Target { get; set; }
-        public string Description => "This is a word dictionary from the language " + Target + " to the language " + Native + ".";
+        public string Description => "This is a word dictionary from the language " + Target.ToLower() + " to the language " + Native.ToLower() + ".";
         public Trie Trie { get; set; }
         public ObservableCollection<Words> allWorlds { get; set; } = new ObservableCollection<Words>();
 
