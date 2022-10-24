@@ -6,60 +6,14 @@
              Background="#272727">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddNewDict" IconImageSource="{FontImage Glyph ='+', Color=White, Size=22}"/>
+        <ToolbarItem Text="Add" Clicked="CallForm" IconImageSource="{FontImage Glyph ='+', Color=White, Size=22}"/>
     </ContentPage.ToolbarItems>
-
-    <ContentPage.Resources>
-        <Style TargetType="Grid">
-            <Setter Property="VisualStateManager.VisualStateGroups">
-                <VisualStateGroupList>
-                    <VisualStateGroup x:Name="CommomStates">
-                        <VisualState x:Name="Normal" />
-                        <VisualState x:Name="Selected">
-                            <VisualState.Setters>
-                                <Setter Property="Scale" Value="1.5" />
-                            </VisualState.Setters>
-                        </VisualState>
-                    </VisualStateGroup>
-                </VisualStateGroupList>
-            </Setter>
-        </Style>
-    </ContentPage.Resources>
-    
     <ScrollView>
-        <Grid Padding="10" ColumnDefinitions="*">
-            <!--
-            <StackLayout Grid.Column="0" Padding="10">
-                <Border Stroke="Black" StrokeThickness="0.3" Margin="10" MaximumWidthRequest="450" BackgroundColor="#323232" HorizontalOptions="Start" StrokeShape="RoundRectangle 20">
-
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="10,10" Opacity="0.7"/>
-                    </Border.Shadow>
-
-                    <StackLayout>
-                        <Grid Padding="10" ColumnDefinitions="*,*">
-                            <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Start">
-                                <Label FontFamily="FaSolid" FontSize="18" Text="{x:Static models:FaSolidIcons.Book}" TextColor="White" Padding="10"/>
-                                <Label Text="English" HorizontalOptions="StartAndExpand" FontSize="18" Padding="10"/>
-                            </HorizontalStackLayout>
-                            <StackLayout Grid.Column="1" HorizontalOptions="End">
-                                <Button FontFamily="FaRegular" Text="{x:Static models:FaRegularIcons.x}" TextColor="White" FontSize="11" HorizontalOptions="End" BackgroundColor="Transparent" BorderWidth="0"/>
-                            </StackLayout>
-                        </Grid>
-                        <Label Text="This is a word dictionary from the language English to the language Portuguese." FontSize="13" Padding="10"/>
-                    </StackLayout>
-                </Border>
-
-            </StackLayout>
-
-            <StackLayout Grid.Column="1" Padding="10">
-                
-            </StackLayout>
-            -->
+        <Grid Padding="10"  ColumnDefinitions="*">
             <CollectionView x:Name="dictCollection"
                             ItemsSource="{Binding AllDictionaries}"
                             SelectionMode="Single"
-                            SelectionChanged="DictCollection_SelectionChanged">
+                            SelectionChanged="dictCollection_SelectionChanged">
 
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Span="2" Orientation="Vertical" />
@@ -70,7 +24,7 @@
                 </CollectionView.EmptyView>
                 
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Dict">
+                    <DataTemplate>
                         <ContentView Padding="10">
                             <Border Stroke="Black"
                                     StrokeThickness="0.3"
@@ -102,14 +56,19 @@
                                     </Grid>
                                     <Label Text="{Binding Description}" FontSize="13" Padding="10"/>
                                 </StackLayout>
-                                
+
                             </Border>
                         </ContentView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
                 
             </CollectionView>
-            
+            <VerticalStackLayout x:Name="Form" Margin="20" Padding="10" Opacity="0" IsVisible="false">
+                <Entry x:Name="TargetL" Placeholder="Insert here the language you're learning!!" PlaceholderColor="White" BackgroundColor="#272727"/>
+                <Entry x:Name="NativeL" Placeholder="Insert here the language you're going to use as a suport !!" PlaceholderColor="White"  Background="#272727"/>
+                <Button Clicked="AddNewDict" BackgroundColor="#08522D" Text="Create" CornerRadius="20" MaximumWidthRequest="500" TextColor="White" BorderColor="Black"></Button>
+            </VerticalStackLayout>
+
         </Grid>
     </ScrollView>
 </ContentPage>

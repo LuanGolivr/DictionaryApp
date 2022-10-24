@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-10-22T15:39:56.992</Modified>
+      <Modified>2022-10-24T18:16:27.557</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-10-22T15:39:55.744</Modified>
+      <Modified>2022-10-24T18:16:26.175</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\LanguageDict.runtimeconfig.json">
       <PackagePath>LanguageDict.runtimeconfig.json</PackagePath>
-      <Modified>2022-10-22T13:43:09.478</Modified>
+      <Modified>2022-10-22T20:47:05.888</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\LanguageDict.dll">
       <PackagePath>LanguageDict.dll</PackagePath>
-      <Modified>2022-10-22T15:39:53.713</Modified>
+      <Modified>2022-10-24T18:16:23.771</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>LanguageDict.exe</PackagePath>
-      <Modified>2022-10-22T15:39:53.751</Modified>
+      <Modified>2022-10-24T18:16:23.804</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.10\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -957,6 +957,10 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2022-08-17T03:26:26.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\caliburn.micro.core\4.0.212\lib\netstandard2.0\Caliburn.Micro.Core.dll">
+      <PackagePath>Caliburn.Micro.Core.dll</PackagePath>
+      <Modified>2022-08-27T00:07:26.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\communitytoolkit.mvvm\8.0.0\lib\net6.0\CommunityToolkit.Mvvm.dll">
       <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
       <Modified>2022-08-03T23:09:22.000</Modified>
@@ -1127,7 +1131,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\LanguageDict.deps.json">
       <PackagePath>LanguageDict.deps.json</PackagePath>
-      <Modified>2022-10-22T15:39:56.816</Modified>
+      <Modified>2022-10-24T18:16:27.363</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.maui.controls.ref.win\6.0.541\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

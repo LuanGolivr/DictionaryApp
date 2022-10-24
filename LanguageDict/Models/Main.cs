@@ -1,17 +1,20 @@
-﻿using System.Collections.ObjectModel;
-using Newtonsoft.Json;
+﻿using MongoDB.Bson.Serialization;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Reflection.Metadata;
 
 namespace LanguageDict.Models
 {
-    internal class Main
+    public class Main
     {
-        public ObservableCollection<Dict> AllDictionaries { get; set; }
+        public ObservableCollection<Dict> AllDictionaries { get; set; } = new ObservableCollection<Dict>();
         public DataBs serverConnection { get; set; }
 
         public Main()
         {
             makeConnectionServer();
-            //AllDictionaries.Clear();
+            AllDictionaries.Clear();
+            LoadData();
         }
 
         private void makeConnectionServer()
@@ -19,10 +22,18 @@ namespace LanguageDict.Models
             serverConnection = new DataBs();
         }
 
-        public bool checkStatus()
+        public void LoadData()
         {
-            bool answer = serverConnection.clientStatus;
-            return answer;
+            AllDictionaries.Clear();
+            var data = serverConnection.GetDict();
+
+            for (int i = 0; i < data.Count; i++)
+            {
+                data[i].RemoveAt(0);
+                var nObj= BsonSerializer.Deserialize<Dict>(data[i]);
+
+                AllDictionaries.Insert(i, nObj);
+            }
         }
     }
 }

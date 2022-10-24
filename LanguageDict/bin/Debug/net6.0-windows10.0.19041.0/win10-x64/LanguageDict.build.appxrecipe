@@ -718,6 +718,9 @@
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.27\lib\net6.0\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\caliburn.micro.core\4.0.212\lib\netstandard2.0\Caliburn.Micro.Core.dll">
+      <PackagePath>Caliburn.Micro.Core.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\luanG\.nuget\packages\communitytoolkit.mvvm\8.0.0\lib\net6.0\CommunityToolkit.Mvvm.dll">
       <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
     </AppxPackagedFile>

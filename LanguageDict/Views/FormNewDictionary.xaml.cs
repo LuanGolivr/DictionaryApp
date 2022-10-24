@@ -13,7 +13,6 @@ public partial class FormNewDictionary : ContentPage
 
     private async void CreateNewDict(object sender, EventArgs e)
     {
-		/*
 		string targetL = TargetL.Text;
 		string nativeL = NativeL.Text;
 
@@ -22,15 +21,22 @@ public partial class FormNewDictionary : ContentPage
 			Dict nDict = new Dict();
 			nDict.Target = targetL;
 			nDict.Native = nativeL;
+			bool result = instMain.serverConnection.addNewDict(nDict);
 
-			if (instMain.serverConnection.addNewDict(nDict))
+
+            if (result)
 			{
                 instMain.AllDictionaries.Add(nDict);
+                await Shell.Current.GoToAsync("..");
+            }else
+			{
+                await DisplayAlert("Existed Dictionary", "Sorry, but this dictionary has already been created !!", "OK");
             }
-
-			await Shell.Current.GoToAsync(nameof(Views.MainPage));
-		}
-		*/
+        }
+        else
+		{
+			await DisplayAlert("Error","Invalid informations, try again !!", "OK");
+        }
 
     }
 }

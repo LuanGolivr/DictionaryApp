@@ -742,3 +742,4 @@ C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-wind
 C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\bible_icon.scale-100.png
 C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-Regular.ttf
+C:\Users\luanG\Documents\GitHub\DictionaryApp\LanguageDict\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Caliburn.Micro.Core.dll

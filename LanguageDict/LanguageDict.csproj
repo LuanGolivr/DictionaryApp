@@ -49,11 +49,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Views\FormNewDictionary.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="Views\FormNewDictionary.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Fonts\FontAwesome6Brands_Regular_400.otf" />
 	  <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Caliburn.Micro.Core" Version="4.0.212" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0-rc.2.22472.3" />
 	  <PackageReference Include="MongoDB.Bson" Version="2.18.0" />
@@ -70,9 +79,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\FormNewDictionary.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\WordOfTheDay.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

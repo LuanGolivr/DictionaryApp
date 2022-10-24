@@ -1,21 +1,24 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.IO;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text.Json;
+using System.Windows.Input;
 
 namespace LanguageDict.Models
 {
-    internal class DataBs
+    public class DataBs
     {
         public static MongoClient _client { get; set; }
-        public bool clientStatus { get; private set; }
         public IMongoDatabase _dataBase { get; private set; }
 
         public DataBs()
         {
             _client = new MongoClient("mongodb://localhost:27017");
             _dataBase = _client.GetDatabase("dotnetWebServices");
-            //Test();
         }
 
         private IMongoCollection<BsonDocument> getCollection(string collec)
@@ -27,18 +30,16 @@ namespace LanguageDict.Models
         public bool addNewDict(Dict dictionary)
         {
             var collection = getCollection("Dictionaries");
+            bool result = searchDict(dictionary.Target);
 
-            string strTrie = JsonSerializer.Serialize<Trie>(dictionary.Trie);
-            string strAllWords = JsonSerializer.Serialize<ObservableCollection<Words>>(dictionary.allWorlds);
-
-            var document = new BsonDocument
+            if(result == false)
             {
-                {"Native", dictionary.Native},
-                {"Target", dictionary.Target},
-                {"Description", dictionary.Description},
-                {"Trie", strTrie},
-                {"AllWords", strAllWords}
-            };
+                var bsonDoc = dictionary.ToBsonDocument();
+                
+
+                collection.InsertOne(bsonDoc);
+                return true;
+            }
 
             return false;
         }
@@ -48,7 +49,29 @@ namespace LanguageDict.Models
             var collection = getCollection("Dictionaries");
         }
 
+        public bool searchDict(string lang)
+        {
+            var collection = getCollection("Dictionaries");
+            var filter = Builders<BsonDocument>.Filter.Eq("Target", lang);
+            var doc = collection.Find(filter).FirstOrDefault();
 
+            if (doc != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public List<BsonDocument> GetDict()
+        {
+            var collection = getCollection("Dictionaries");
+
+            var documents = collection.Find(new BsonDocument()).ToList();
+
+            return documents;
+        }
 
         public void addNewWord(string word)
         {
@@ -63,33 +86,6 @@ namespace LanguageDict.Models
         public void searchWord(string word)
         {
 
-        }
-
-        private void Test()
-        {
-            var database = _client.GetDatabase("donetWebServices");
-            var collection = database.GetCollection<BsonDocument>("Products");
-
-            var doc = new BsonDocument
-            {
-                { "Word", "Test" },
-                { "Translation", "Test translation" },
-                { "Meaning", "Test meaning" },
-            };
-
-            try
-            {
-                collection.InsertOne(doc);
-                clientStatus = true;
-            }
-            catch (Exception ex)
-            {
-                clientStatus = false;
-            }
-            finally
-            {
-
-            }
         }
     }
 }

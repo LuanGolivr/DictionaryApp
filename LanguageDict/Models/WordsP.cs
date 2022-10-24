@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace LanguageDict.Models
 {
-    internal class WordsP
+    public class WordsP
     {
         public ObservableCollection<WordSelected> AllWordsSelected { get; set; } = new ObservableCollection<WordSelected>();
         private Main mainP = new Main();
@@ -14,7 +14,7 @@ namespace LanguageDict.Models
         }
     }
 
-    class WordSelected
+    public class WordSelected
     {
         public string word { get; set; }
         public string translate { get; set; }

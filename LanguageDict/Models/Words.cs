@@ -1,54 +1,17 @@
-﻿namespace LanguageDict.Models
+﻿using System.Collections.ObjectModel;
+
+namespace LanguageDict.Models
 {
-    internal class Words
+    public class Words
     {
         public string Word { get; set; }
         public string Translation { get; set; }
-        public string Meaning { get; set; }
-        public List<string> Examples { get; set; }
+        public ObservableCollection<string> Meanings { get; set; } = new ObservableCollection<string>();
+        public ObservableCollection<string> Synonimus { get; set; } = new ObservableCollection<string>();
+        public ObservableCollection<string> Antonyms { get; set; } = new ObservableCollection<string>();
+        public ObservableCollection<string> Examples { get; set; } = new ObservableCollection<string>();
 
-
-        public bool addNewExample(string example)
-        {
-            for(int i = 0; i < Examples.Count; i++)
-            {
-                if (Examples[i] == example)
-                {
-                    return false;
-                }
-            }
-
-            Examples.Add(example);
-            return true;
-        }
-
-        public bool removeExample(string example)
-        {
-            for(int i = 0; i < Examples.Count; i++)
-            {
-                if (Examples[i] == example)
-                {
-                    Examples.RemoveAt(i);
-                }
-            }
-
-            return true;
-        }
-
-        public void changeWord(string newWord)
-        {
-            Word = newWord;
-        }
-
-        public void changeTranslation(string newTranslation)
-        {
-            Translation = newTranslation;
-        }
-
-        public void changeMeaning(string newMeaning)
-        {
-            Meaning = newMeaning;
-        }
+        /* Add news methods to work and deal with this properties */
 
     }   
 }
