@@ -1,8 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
+
 
 namespace LanguageDict.Models
 {
-    public class Dict
+    public class Dict: ObservableObject
     {
         public string Native { get; set; }
         public string Target { get; set; }

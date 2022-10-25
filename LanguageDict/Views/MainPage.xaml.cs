@@ -1,6 +1,8 @@
 ﻿using LanguageDict.Models;
 
 namespace LanguageDict.Views;
+
+
 public partial class MainPage : ContentPage
 {
     private Dict selecDict = null;
@@ -71,7 +73,7 @@ public partial class MainPage : ContentPage
     {
         if(e.CurrentSelection.Count != 0)
         {
-            selecDict = (Dict)e.CurrentSelection[0];
+            selecDict = (Dict)e.CurrentSelection[e.CurrentSelection.Count-1];
 
             if (selecDict != null)
             {
@@ -83,24 +85,14 @@ public partial class MainPage : ContentPage
                 }
                 else if (action == "Get into it")
                 {
+                    mainInst.serverConnection.SetSelected(selecDict);
                     await Shell.Current.GoToAsync(nameof(WordsPage));
                 }
                 else
                 {
                     selecDict = null;
-                    dictCollection.SelectionMode = SelectionMode.None;
                 }
-            }
-
-           
-        }
-    }
-
-    private void Border_HandlerChanged(object sender, EventArgs e)
-    {
-        if(dictCollection.SelectionMode == SelectionMode.None)
-        {
-            dictCollection.SelectionMode = SelectionMode.Single;
+            }  
         }
     }
 }

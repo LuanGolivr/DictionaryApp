@@ -18,12 +18,12 @@
                        FontSize="20"
                        VerticalOptions="Center" 
                        HorizontalOptions="Center" />
-            
+
             <!--SearchButtonPressed="SearchWord"-->
             <SearchBar x:Name="searchBar" Placeholder="Search a word" IsTextPredictionEnabled="True" Margin="10" MaximumWidthRequest="450"/>
-      
+
             <StackLayout>
-                    <Border x:Name="searchTable"
+                <Border x:Name="searchTable"
                             Stroke="Blue"
                             Margin="10"
                             Padding="10"
@@ -32,7 +32,7 @@
                             StrokeShape="RoundRectangle 15"
                             Opacity="0">
 
-                        <StackLayout>
+                    <StackLayout>
                         <Label x:Name="searchWord" FontSize="25" Text="" HorizontalOptions="Start"  TextColor="White" FontAttributes="Bold"/>
                         <Label x:Name="searchTranslate" FontSize="16" Text="" HorizontalOptions="Start" TextColor="White" />
                         <BoxView Color="White" HorizontalOptions="Fill" HeightRequest="2" Margin="5"/>
@@ -48,7 +48,6 @@
 
             <CollectionView x:Name="wordCollection"
                                 Margin="5"
-                                ItemsSource="{Binding AllWordsSelected}"
                                 SelectionMode="Single">
 
                 <CollectionView.ItemsLayout>
@@ -58,7 +57,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <HorizontalStackLayout>
-                                <Border Stroke="Blue"
+                            <Border Stroke="Blue"
                                         Margin="10"
                                         Padding="10"
                                         BackgroundColor="Black"
@@ -67,16 +66,16 @@
                                         StrokeThickness="3"
                                         StrokeShape="RoundRectangle 15">
 
-                                    <StackLayout>
-                                    <Label FontSize="25" Text="{Binding word}" HorizontalOptions="Start"  TextColor="White" FontAttributes="Bold"/>
-                                    <Label FontSize="16" Text="{Binding translate}" HorizontalOptions="Start" TextColor="White" />
+                                <StackLayout>
+                                    <Label FontSize="25" Text="" HorizontalOptions="Start"  TextColor="White" FontAttributes="Bold"/>
+                                    <Label FontSize="16" Text="" HorizontalOptions="Start" TextColor="White" />
                                     <BoxView Color="White" HorizontalOptions="Fill" HeightRequest="2" Margin="5"/>
                                     <Label FontSize="25" Text="Description: " HorizontalOptions="Start" TextColor="White" FontAttributes="Bold"/>
                                     <Label FontSize="16" HorizontalOptions="Start" TextColor="White"
-                                       Text="{Binding descr}" />
+                                       Text="" />
                                     <BoxView Color="White" HorizontalOptions="Fill" HeightRequest="2" Margin="5"/>
                                     <Label FontSize="25" Text="Example: " HorizontalOptions="Start" TextColor="White"  FontAttributes="Bold"/>
-                                    <Label FontSize="16" HorizontalOptions="Start" TextColor="White" Text="{Binding examples}" />
+                                    <Label FontSize="16" HorizontalOptions="Start" TextColor="White" Text="" />
                                 </StackLayout>
 
                             </Border>

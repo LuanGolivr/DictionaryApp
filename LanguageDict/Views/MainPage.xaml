@@ -12,7 +12,7 @@
         <Grid Padding="10"  ColumnDefinitions="*">
             <CollectionView x:Name="dictCollection"
                             ItemsSource="{Binding AllDictionaries}"
-                            SelectionMode="Single"
+                            SelectionMode="Multiple"
                             SelectionChanged="dictCollection_SelectionChanged">
 
                 <CollectionView.ItemsLayout>
@@ -32,8 +32,7 @@
                                     MaximumWidthRequest="450"
                                     BackgroundColor="#323232"
                                     HorizontalOptions="Start"
-                                    StrokeShape="RoundRectangle 20"
-                                    HandlerChanged="Border_HandlerChanged">
+                                    StrokeShape="RoundRectangle 20">
 
                                 <Border.Shadow>
                                     <Shadow Brush="Black" Offset="10,10" Opacity="0.7" />

@@ -83,6 +83,31 @@ namespace LanguageDict.Models
             return documents;
         }
 
+        public void SetSelected(Dict selectedDic)
+        {
+            var collection = getCollection("SelectedDic");
+            bool result = searchDict(selectedDic.Target);
+            var bsonDoc = selectedDic.ToBsonDocument();
+
+            if (result)
+            {
+                var filter = Builders<BsonDocument>.Filter.Eq("Target", selectedDic.Target);
+                collection.DeleteOne(filter);
+            }
+
+            collection.InsertOne(bsonDoc);
+        }
+
+        public Dict GetSelectedDict()
+        {
+            var collection = getCollection("SelectedDic");
+            var document = collection.Find(new BsonDocument()).ToList();
+            document[0].RemoveAt(0);
+
+            var result = BsonSerializer.Deserialize<Dict>(document[0]);
+            return result;
+        }
+
         public void addNewWord(string word)
         {
 

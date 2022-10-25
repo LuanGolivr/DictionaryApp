@@ -1,7 +1,5 @@
 ﻿using MongoDB.Bson.Serialization;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Reflection.Metadata;
 
 namespace LanguageDict.Models
 {
