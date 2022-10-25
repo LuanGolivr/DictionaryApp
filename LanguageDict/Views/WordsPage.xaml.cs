@@ -10,8 +10,6 @@ public partial class WordsPage : ContentPage
     public WordsPage()
     {
         InitializeComponent();
-        Test = new DataBs();
-        Test.GetSelectedDict();
     }
 
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
