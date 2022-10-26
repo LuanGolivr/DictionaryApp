@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace LanguageDict.Models
 {
@@ -16,9 +12,10 @@ namespace LanguageDict.Models
             _client = new HttpClient();
         }
 
-        public async Task<DictData> GetDictData(string query)
+        public async Task<Root> GetDictData(string query)
         {
-            DictData dictData = null;
+            Root dictData = null;
+            List<Root> dictDataList = null;
 
             try
             {
@@ -26,7 +23,7 @@ namespace LanguageDict.Models
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    dictData.JsonConvert.DeserializeObject<DictData>(content);
+                    dictDataList = JsonConvert.DeserializeObject<List<Root>>(content);
                 }
             }
             catch (Exception ex)
@@ -35,6 +32,8 @@ namespace LanguageDict.Models
                 throw;
             }
 
+            dictData = dictDataList[0];
+            
             return dictData;
         }
     }

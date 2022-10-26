@@ -8,5 +8,10 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Entry Placeholder="Insert a word" x:Name="gettingWord" />
+        <Button Text="TestAPI" FontSize="20" Clicked="Button_Clicked"></Button>
+
+        <Label Text="{Binding teste}" FontSize="20" TextColor="White" />
+        <Label Text="{Binding word}" FontSize="20" TextColor="White" />
     </VerticalStackLayout>
 </ContentPage>
