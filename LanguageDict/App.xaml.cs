@@ -8,6 +8,6 @@ public partial class App : Application
 
 		MainPage = new AppShell();
 		Routing.RegisterRoute(nameof(Views.WordsPage), typeof(Views.WordsPage));
-		Routing.RegisterRoute(nameof(Views.WordOfTheDay), typeof(Views.WordOfTheDay));
+		Routing.RegisterRoute(nameof(Views.GetANewWord), typeof(Views.GetANewWord));
 	}
 }

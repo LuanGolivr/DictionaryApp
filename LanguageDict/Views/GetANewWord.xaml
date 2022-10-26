@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LanguageDict.Views.GetANewWord"
+             Title="Get a Word"
+             BackgroundColor="#272727">
+
+    <ScrollView>
+
+        <Grid ColumnDefinitions="*,*" Padding="10">
+
+            <VerticalStackLayout Grid.Column="0">
+                <Button Text="Get a word" FontSize="15" TextColor="White" BackgroundColor="Green" HorizontalOptions="Start" Clicked="GetWord" Margin="10"/>
+                <Label Text="Word: " FontSize="Title"  TextColor="White"/>
+                <Border BackgroundColor="#323232" Padding="0" StrokeShape="RoundRectangle 20" MinimumHeightRequest="100">
+                    <Label Text="{Binding Word}" FontSize="Title"  TextColor="White" HorizontalOptions="Center" Padding="10"/>
+                </Border>
+                <Label Text="Meanings: " FontSize="Title" TextColor="White" />
+                <Border BackgroundColor="#323232" Margin="10" Padding="10" StrokeShape="RoundRectangle 20" MinimumHeightRequest="600">
+                    <Label Text="{Binding Meanings}" FontSize="Body"  TextColor="White" Padding="5"/>
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1">
+                <Label Text="Synonimus: " FontSize="Title"  TextColor="White"/>
+                <Border BackgroundColor="#323232" Margin="10" Padding="10" StrokeShape="RoundRectangle 20" MinimumHeightRequest="300">
+                    <Label Text="{Binding Synonimus}" FontSize="Body"  TextColor="White" Padding="5"/>
+                </Border>
+
+                <Label Text="Antonyms: " FontSize="Title"  TextColor="White"/>
+                <Border BackgroundColor="#323232" Margin="10" Padding="10" StrokeShape="RoundRectangle 20" MinimumHeightRequest="280">
+                    <Label Text="{Binding Antonyms}" FontSize="Body"  TextColor="White" Padding="5"/>
+                </Border>
+            </VerticalStackLayout>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
