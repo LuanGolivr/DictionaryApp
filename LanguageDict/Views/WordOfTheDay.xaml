@@ -31,61 +31,35 @@
         <Grid ColumnDefinitions="*,*" Padding="10">
 
             <VerticalStackLayout Grid.Column="0">
-                <Border Stroke="Black"
-                    StrokeThickness="0.3"
-                    MaximumWidthRequest="450"
-                    BackgroundColor="#323232"
-                    HorizontalOptions="Start"
-                    StrokeShape="RoundRectangle 20"
-                    HeightRequest="100"
-                    WidthRequest="0">
-
+                <Label Text="Word: " FontSize="Title"  TextColor="White"/>
+                <Border BackgroundColor="#323232" Padding="0" StrokeShape="RoundRectangle 20" MinimumHeightRequest="200">
+                    <Label Text="{Binding Word}" FontSize="Title"  TextColor="White" HorizontalOptions="Center" Padding="10"/>
                 </Border>
+                <Label Text="Meanings: " FontSize="Title" TextColor="White" />
+                <Border BackgroundColor="#323232" Margin="10" Padding="10" StrokeShape="RoundRectangle 20" MinimumHeightRequest="600">
+                    <Label Text="{Binding Meanings}" FontSize="Body"  TextColor="White" Padding="5"/>
+                </Border>
+                <Entry Placeholder="Insert a word" x:Name="gettingWord" HeightRequest="50" />
             </VerticalStackLayout>
-            
+
             <VerticalStackLayout Grid.Column="1">
-                <Border Stroke="Black"
-                    StrokeThickness="0.3"
-                    MaximumWidthRequest="450"
-                    BackgroundColor="#323232"
-                    HorizontalOptions="Start"
-                    StrokeShape="RoundRectangle 20"
-                    HeightRequest="100"
-                    WidthRequest="450">
-
+                <Label Text="Synonimus: " FontSize="Title"  TextColor="White"/>
+                <Border BackgroundColor="#323232" Margin="10" Padding="10" StrokeShape="RoundRectangle 20" MinimumHeightRequest="450">
+                    <Label Text="{Binding Synonimus}" FontSize="Body"  TextColor="White" Padding="5"/>
                 </Border>
+
+                <Label Text="Antonyms: " FontSize="Title"  TextColor="White"/>
+                <Border BackgroundColor="#323232" Margin="10" Padding="10" StrokeShape="RoundRectangle 20" MinimumHeightRequest="450">
+                    <Label Text="{Binding Antonyms}" FontSize="Body"  TextColor="White" Padding="5"/>
+                </Border>
+                <Button Text="TestAPI" FontSize="20" Clicked="Button_Clicked" HeightRequest="50"></Button>
             </VerticalStackLayout>
+
             
             
-            
-            <!--
-            <Border Stroke="Black"
-                    StrokeThickness="0.3"
-                    Margin="10"
-                    MaximumWidthRequest="450"
-                    BackgroundColor="#323232"
-                    HorizontalOptions="Start"
-                    StrokeShape="RoundRectangle 20"
-                    Grid.Column="1"
-                    HeightRequest="100"
-                    WidthRequest="300">
-
-            </Border>
-
-            <Border Stroke="Black"
-                    StrokeThickness="0.3"
-                    Margin="10"
-                    MaximumWidthRequest="450"
-                    BackgroundColor="#323232"
-                    HorizontalOptions="Start"
-                    StrokeShape="RoundRectangle 20"
-                    Grid.Column="1"
-                    HeightRequest="100"
-                    WidthRequest="300">
-
-            </Border>
-            -->
         </Grid>
+        
+        
         
     </ScrollView>
 </ContentPage>

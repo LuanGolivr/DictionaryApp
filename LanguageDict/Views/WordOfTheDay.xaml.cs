@@ -13,7 +13,7 @@ public partial class WordOfTheDay : ContentPage
 		
 	}
 
-	/*
+	
     private async void Button_Clicked(object sender, EventArgs e)
     {
 		if (!string.IsNullOrWhiteSpace(gettingWord.Text))
@@ -30,5 +30,5 @@ public partial class WordOfTheDay : ContentPage
 		requestURI += $"{gettingWord.Text}";
 		return requestURI;
 	}
-	*/
+	
 }

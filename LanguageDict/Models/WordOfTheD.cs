@@ -4,7 +4,6 @@ namespace LanguageDict.Models
 {
     public class WordOfTheD
     {
-        Root _dictData { get; set; }
         public string Word { get; set; }
         public string Meanings { get; set; }
         public string Synonimus { get; set; }
@@ -12,11 +11,10 @@ namespace LanguageDict.Models
 
         public WordOfTheD(Root dictData = null)
         {
-            _dictData = dictData;
-            Word = _dictData.word;
-            getMeanings(_dictData.meanings);
-            getSynonimus(_dictData.meanings);
-            getAntonyms(_dictData.meanings);
+            Word = dictData.word;
+            getMeanings(dictData.meanings);
+            getSynonimus(dictData.meanings);
+            getAntonyms(dictData.meanings);
             
         }
 
@@ -28,11 +26,18 @@ namespace LanguageDict.Models
                 string result = "";
                 for(int j = 0; j < list[i].definitions.Count; j++)
                 {
-                    result += $"{list[i].definitions[j].definition}";
-                    result += "\n";
+                    if (list[i].definitions[j].definition != "" && list[i].definitions[j].definition != null)
+                    {
+                        result += $"* {list[i].definitions[j].definition}";
+                        result += "\n\n";
+                    }
                 }
-                Meanings += result;
-                Meanings += "\n";
+                if(result != null && result != "")
+                {
+                    Meanings += $"* {result}";
+                    Meanings += "\n\n";
+                }
+                
             }
         }
 
@@ -43,11 +48,20 @@ namespace LanguageDict.Models
                 string result = "";
                 for(int j = 0; j < list[i].synonyms.Count; j++)
                 {
-                    result += $"{list[i].synonyms[j]}";
-                    result += "\n";
+                    if (list[i].synonyms[j] != "" && list[i].synonyms[j] != null)
+                    {
+                        result += $"* {list[i].synonyms[j]}";
+                        result += "\n";
+                    }
+                    
                 }
-                Synonimus += result;
-                Synonimus += "\n";
+
+                if(result != null && result != "")
+                {
+                    Synonimus += $"* {result}";
+                    Synonimus += "\n";
+                }
+                
             }
 
         }
@@ -59,12 +73,20 @@ namespace LanguageDict.Models
                 string result = "";
                 for(int j = 0; j < list[i].antonyms.Count; j++)
                 {
-                    result += $"{list[i].antonyms[j]}";
-                    result += "\n";
+                    if (list[i].antonyms[j] != "" && list[i].antonyms[j] != null)
+                    {
+                        result += $"* {list[i].antonyms[j]}";
+                        result += "\n";
+                    }
+                    
                 }
 
-                Antonyms += result;
-                Antonyms += "\n";
+                if(result != null && result != "")
+                {
+                    Antonyms += $"* {result}";
+                    Antonyms += "\n";
+                }
+                
             }
         }
     }
