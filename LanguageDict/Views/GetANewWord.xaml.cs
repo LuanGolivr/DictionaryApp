@@ -65,7 +65,15 @@ public partial class GetANewWord : ContentPage
             {
                 string translate = await DisplayPromptAsync("Translation","Insert the translation of the word !!");
                 Words currentWord = new Words(WordText.Text, translate, dictDat);
+                bool result = intancM.serverConnection.addNewWord(currentWord, "English");
 
+                if (result)
+                {
+                    await DisplayAlert("Add the word", "The word was inserted sucessufuly !", "OK");
+                }else
+                {
+                    await DisplayAlert("Add the word", "An error has happened , try again !!", "OK");
+                }
                 
             }else
             {

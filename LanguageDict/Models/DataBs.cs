@@ -68,12 +68,10 @@ namespace LanguageDict.Models
         }
 
 
-        public List<BsonDocument> GetDict()
+        public List<BsonDocument> GetDict(string target = null)
         {
             var collection = getCollection("Dictionaries");
-
             var documents = collection.Find(new BsonDocument()).ToList();
-
             return documents;
         }
 
@@ -102,9 +100,37 @@ namespace LanguageDict.Models
             return result;
         }
 
-        public void addNewWord(string word)
+        public bool addNewWord(Words word, string targetLang)
         {
+            var collection = getCollection("Dictionaries");
+            var filter = Builders<BsonDocument>.Filter.Eq("Target", targetLang);
+            var doc = collection.Find(filter).FirstOrDefault();
 
+            if(doc != null)
+            {
+                doc.RemoveAt(0);
+                var nObj = BsonSerializer.Deserialize<Dict>(doc);
+
+                for(int i = 0; i < nObj.allWorlds.Count; i++)
+                {
+                    if (nObj.allWorlds[i].Word == word.Word)
+                    {
+                        return false;
+                    }
+                }
+
+                nObj.allWorlds.Add(word);
+
+                filter = Builders<BsonDocument>.Filter.Eq("Target", targetLang);
+                collection.DeleteOne(filter);
+
+                var bsonDoc = nObj.ToBsonDocument();
+                collection.InsertOne(bsonDoc);
+
+                return true;
+            }
+
+            return false;
         }
 
         public void removeWord(string word)
@@ -112,7 +138,7 @@ namespace LanguageDict.Models
 
         }
 
-        public void searchWord(string word)
+        public void searchWord(string word, )
         {
 
         }
