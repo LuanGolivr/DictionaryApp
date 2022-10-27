@@ -28,13 +28,13 @@ namespace LanguageDict.Models
                 {
                     if (list[i].definitions[j].definition != "" && list[i].definitions[j].definition != null)
                     {
-                        result += $"* {list[i].definitions[j].definition}";
+                        result += $"{list[i].definitions[j].definition}";
                         result += "\n\n";
                     }
                 }
                 if(result != null && result != "")
                 {
-                    Meanings += $"* {result}";
+                    Meanings += $"{result}";
                     Meanings += "\n\n";
                 }
                 
@@ -50,7 +50,7 @@ namespace LanguageDict.Models
                 {
                     if (list[i].synonyms[j] != "" && list[i].synonyms[j] != null)
                     {
-                        result += $"* {list[i].synonyms[j]}";
+                        result += $"{list[i].synonyms[j]}";
                         result += "\n";
                     }
                     
@@ -58,7 +58,7 @@ namespace LanguageDict.Models
 
                 if(result != null && result != "")
                 {
-                    Synonimus += $"* {result}";
+                    Synonimus += $"{result}";
                     Synonimus += "\n";
                 }
                 
@@ -75,7 +75,7 @@ namespace LanguageDict.Models
                 {
                     if (list[i].antonyms[j] != "" && list[i].antonyms[j] != null)
                     {
-                        result += $"* {list[i].antonyms[j]}";
+                        result += $"{list[i].antonyms[j]}";
                         result += "\n";
                     }
                     
@@ -83,7 +83,7 @@ namespace LanguageDict.Models
 
                 if(result != null && result != "")
                 {
-                    Antonyms += $"* {result}";
+                    Antonyms += $"{result}";
                     Antonyms += "\n";
                 }
                 

@@ -8,6 +8,8 @@ public partial class GetANewWord : ContentPage
     RestServicesDict _restService;
     RestServicesRandom _restServiceRandom;
     public string randomW { get; set; } = "";
+    private WordOfTheD instanc { get; set;}
+    private Root dictDat { get; set; }
 
     public GetANewWord()
 	{
@@ -34,7 +36,9 @@ public partial class GetANewWord : ContentPage
                 await DisplayAlert("Error", "We didn't get the word", "OK");
             }else
             {
-                BindingContext = new WordOfTheD(dictData);
+                dictDat = dictData;
+                instanc = new WordOfTheD(dictData);
+                BindingContext = instanc;
             }
             
         }
@@ -50,5 +54,22 @@ public partial class GetANewWord : ContentPage
     private void GetWord(object sender, EventArgs e)
     {
         GetRandomWord();
+    }
+
+    private async void AddToDict(object sender, EventArgs e)
+    {
+        if (WordText.Text != null && WordText.Text != "")
+        {
+            Main intancM = new Main();
+            if (intancM.serverConnection.searchDict("English"))
+            {
+                string translate = await DisplayPromptAsync("Translation","Insert the translation of the word !!");
+                Words currentWord = new Words(WordText.Text, translate, dictDat);
+
+                
+            }else
+            {
+                await DisplayAlert("Error", "You don't have an english dictioanry to add this word !!", "OK");            }
+        }
     }
 }

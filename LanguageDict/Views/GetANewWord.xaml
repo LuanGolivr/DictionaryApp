@@ -8,12 +8,16 @@
     <ScrollView>
 
         <Grid ColumnDefinitions="*,*" Padding="10">
-
+            <HorizontalStackLayout Grid.Column="0">
+                
+                
+            </HorizontalStackLayout>
+            
             <VerticalStackLayout Grid.Column="0">
-                <Button Text="Get a word" FontSize="15" TextColor="White" BackgroundColor="Green" HorizontalOptions="Start" Clicked="GetWord" Margin="10"/>
+                <Button Text="Get a word" FontSize="15" TextColor="White" BorderColor="Black" BackgroundColor="Green" HorizontalOptions="Start" Clicked="GetWord" Margin="10"/>
                 <Label Text="Word: " FontSize="Title"  TextColor="White"/>
                 <Border BackgroundColor="#323232" Padding="0" StrokeShape="RoundRectangle 20" MinimumHeightRequest="100">
-                    <Label Text="{Binding Word}" FontSize="Title"  TextColor="White" HorizontalOptions="Center" Padding="10"/>
+                    <Label x:Name="WordText" Text="{Binding Word}" FontSize="Title"  TextColor="White" HorizontalOptions="Center" Padding="10"/>
                 </Border>
                 <Label Text="Meanings: " FontSize="Title" TextColor="White" />
                 <Border BackgroundColor="#323232" Margin="10" Padding="10" StrokeShape="RoundRectangle 20" MinimumHeightRequest="600">
@@ -22,6 +26,7 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Column="1">
+                <Button Text="Add to a dict" FontSize="15" TextColor="White" BorderColor="Black" Clicked="AddToDict" BackgroundColor="#00007f" HorizontalOptions="Start" Margin="10" />
                 <Label Text="Synonimus: " FontSize="Title"  TextColor="White"/>
                 <Border BackgroundColor="#323232" Margin="10" Padding="10" StrokeShape="RoundRectangle 20" MinimumHeightRequest="300">
                     <Label Text="{Binding Synonimus}" FontSize="Body"  TextColor="White" Padding="5"/>
