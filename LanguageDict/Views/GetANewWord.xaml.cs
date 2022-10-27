@@ -65,6 +65,7 @@ public partial class GetANewWord : ContentPage
             {
                 string translate = await DisplayPromptAsync("Translation","Insert the translation of the word !!");
                 Words currentWord = new Words(WordText.Text, translate, dictDat);
+
                 bool result = intancM.serverConnection.addNewWord(currentWord, "English");
 
                 if (result)
@@ -77,7 +78,8 @@ public partial class GetANewWord : ContentPage
                 
             }else
             {
-                await DisplayAlert("Error", "You don't have an english dictioanry to add this word !!", "OK");            }
+                await DisplayAlert("Error", "You don't have an english dictioanry to add this word !!", "OK");            
+            }
         }
     }
 }

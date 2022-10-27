@@ -19,6 +19,14 @@ namespace LanguageDict.Models
 
         public TrieNode rootNode = new TrieNode();
 
+        public Trie(Dictionary<char, TrieNode> children = null)
+        {
+            if(children != null)
+            {
+                rootNode.Children = children;
+            }
+        }
+
         public bool AddWord(string word)
         {
             TrieNode current = rootNode;

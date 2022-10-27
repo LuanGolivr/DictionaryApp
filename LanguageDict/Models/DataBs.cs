@@ -120,6 +120,7 @@ namespace LanguageDict.Models
                 }
 
                 nObj.allWorlds.Add(word);
+                nObj.Trie.AddWord(word.Word);
 
                 filter = Builders<BsonDocument>.Filter.Eq("Target", targetLang);
                 collection.DeleteOne(filter);
