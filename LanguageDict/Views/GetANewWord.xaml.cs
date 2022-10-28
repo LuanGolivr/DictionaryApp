@@ -81,5 +81,9 @@ public partial class GetANewWord : ContentPage
                 await DisplayAlert("Error", "You don't have an english dictioanry to add this word !!", "OK");            
             }
         }
+        else
+        {
+            await DisplayAlert("Error","No word found to add to the dictionary","OK");
+        }
     }
 }

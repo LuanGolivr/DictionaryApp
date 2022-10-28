@@ -139,7 +139,7 @@ namespace LanguageDict.Models
 
         }
 
-        public void searchWord(string word, )
+        public void searchWord(string word)
         {
 
         }
