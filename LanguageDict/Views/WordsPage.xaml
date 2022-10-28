@@ -11,13 +11,37 @@
     </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <Grid Padding="10">
-            <VerticalStackLayout>
+        <Grid Padding="10" RowDefinitions="150,*">
+            <VerticalStackLayout Grid.Row="0">
                 <Label Text="Check it out all the words you have added" TextColor="White" FontSize="Title" HorizontalTextAlignment="Center"/>
                 <SearchBar x:Name="searchBar" Placeholder="Search a word" IsTextPredictionEnabled="True" Margin="10" MaximumWidthRequest="450" HeightRequest="30"/>
             </VerticalStackLayout>
-            
-            
+
+            <CollectionView SelectionMode="Multiple" SelectionChangedCommand="word_SelectionChanged" Grid.Row="1">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="6" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.EmptyView>
+                    <Label Text="You have not added any word yet !!!" FontSize="Title" TextColor="White"  HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin="20" />
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView Padding="10">
+                            <Border Stroke="Black" StrokeThickness="0.3" Margin="3" WidthRequest="200" HeightRequest="50"
+                                    BackgroundColor="#323232"
+                                    HorizontalOptions="Start"
+                                    StrokeShape="RoundRectangle 20">
+
+                                <Label Text="Testando" FontSize="20" HorizontalTextAlignment="Center" TextColor="White" />
+                            </Border>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
         </Grid>
         
         
