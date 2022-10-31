@@ -4,7 +4,7 @@ namespace LanguageDict.Models
 {
     public class TrieNode
     {
-        public Dictionary<char, TrieNode> Children = new Dictionary<char, TrieNode>();
+        public Dictionary<string, TrieNode> Children = new Dictionary<string, TrieNode>();
 
         public bool EndOfWord { get; set; }
 
@@ -19,7 +19,7 @@ namespace LanguageDict.Models
 
         public TrieNode rootNode = new TrieNode();
 
-        public Trie(Dictionary<char, TrieNode> children = null)
+        public Trie(Dictionary<string, TrieNode> children = null)
         {
             if(children != null)
             {
@@ -34,7 +34,7 @@ namespace LanguageDict.Models
 
             for (int i = 0; i < word.Length; i++)
             {
-                char letter = word[i];
+                string letter = word[i].ToString();
                 if (current.Children.ContainsKey(letter) == false )
                 {
                     current.Children[letter] = new TrieNode();
@@ -56,7 +56,7 @@ namespace LanguageDict.Models
 
             for(int i = 0; i <= word.Length; i++)
             {
-                char letter = word[i];
+                string letter = word[i].ToString();
                 if (current.Children.ContainsKey(letter) == false)
                 {
                     return false;
@@ -83,7 +83,7 @@ namespace LanguageDict.Models
 
             for (int i = 0; i < word.Length; i++)
             {
-                char letter = word[i];
+                string letter = word[i].ToString();
 
                 if(current.Children.ContainsKey(letter) == false)
                 {

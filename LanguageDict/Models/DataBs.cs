@@ -109,7 +109,7 @@ namespace LanguageDict.Models
             if(doc != null)
             {
                 doc.RemoveAt(0);
-                var nObj = BsonSerializer.Deserialize<Dict>(doc);
+                Dict nObj = BsonSerializer.Deserialize<Dict>(doc);
 
                 for(int i = 0; i < nObj.allWorlds.Count; i++)
                 {
@@ -122,11 +122,14 @@ namespace LanguageDict.Models
                 nObj.allWorlds.Add(word);
                 nObj.Trie.AddWord(word.Word);
 
+
+                var bsonDoc = nObj.ToBsonDocument();
                 filter = Builders<BsonDocument>.Filter.Eq("Target", targetLang);
                 collection.DeleteOne(filter);
 
-                var bsonDoc = nObj.ToBsonDocument();
+                
                 collection.InsertOne(bsonDoc);
+                SetSelected(nObj);
 
                 return true;
             }

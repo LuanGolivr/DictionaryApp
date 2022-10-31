@@ -5,11 +5,20 @@ namespace LanguageDict.Views;
 
 public partial class WordsPage : ContentPage
 {
-    private Words selectedWord { get; set; }
+    private Words SelectedWord { get; set; }
+    private Dict SelectedDict { get; set; }
 
     public WordsPage()
     {
         InitializeComponent();
+        getSelectedDict();
+        BindingContext = SelectedDict;
+    }
+
+    private void getSelectedDict()
+    {
+        DataBs server = new DataBs();
+        SelectedDict = server.GetSelectedDict();
     }
 
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
@@ -17,29 +26,59 @@ public partial class WordsPage : ContentPage
         base.OnNavigatedTo(args);
     }
 
-    private async void word_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private async void AddNewWord(object sender, EventArgs e)
     {
-        if (e.CurrentSelection.Count != 0)
+        string newWord = string.Empty;
+        string newTransl = string.Empty;
+        string newMeanings = string.Empty;
+        string newSyno = string.Empty;
+        string newAnton = string.Empty;
+        string newExamp = string.Empty;
+
+
+        newWord = await DisplayPromptAsync("Word", "Insert the new word");
+
+        if (newWord != null)
         {
-            selectedWord = (Words)e.CurrentSelection[e.CurrentSelection.Count - 1];
+            newTransl = await DisplayPromptAsync("Translation", "Insert the translation");
 
-            if(selectedWord != null)
+            if (newTransl != null)
             {
-                string action = await DisplayActionSheet("Action", "Cancel", null, "See Definition", "Remove word");
+                newMeanings = await DisplayPromptAsync("Meaning", "Insert the meaning");
 
-                if(action == "Remove word")
+                if (newMeanings != null)
                 {
+                    newSyno = await DisplayPromptAsync("Synonimus", "Insert a synonimus");
+                    newAnton = await DisplayPromptAsync("Antonimys", "Insert an antonymus");
+                    newExamp = await DisplayPromptAsync("Example", "Insert an example");
 
-                }
-                else if(action == "See Definition")
-                {
+                    Words addedWord = new Words();
+                    addedWord.Word = newWord;
+                    addedWord.Translation = newTransl;
+                    addedWord.Meanings.Add(newMeanings);
+                    addedWord.Synonimus.Add(newSyno);
+                    addedWord.Antonyms.Add(newAnton);
+                    addedWord.Examples.Add(newExamp);
 
-                }
-                else
-                {
-                    selectedWord = null;
+                    DataBs server = new DataBs();
+                    bool result = server.addNewWord(addedWord, SelectedDict.Target);
+
+                    if (result)
+                    {
+                        SelectedDict = server.GetSelectedDict();
+                        await DisplayAlert("Word", "The word was inserted sucessfuly!", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Word", "The Word already exist", "OK");
+                    }
                 }
             }
         }
+    }
+
+    private void word_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+
     }
 }

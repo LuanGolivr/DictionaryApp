@@ -7,7 +7,7 @@
              BackgroundColor="#272727">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add"  IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
+        <ToolbarItem Text="Add"  Clicked="AddNewWord" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
     </ContentPage.ToolbarItems>
 
     <ScrollView>
@@ -17,7 +17,7 @@
                 <SearchBar x:Name="searchBar" Placeholder="Search a word" IsTextPredictionEnabled="True" Margin="10" MaximumWidthRequest="450" HeightRequest="30"/>
             </VerticalStackLayout>
 
-            <CollectionView SelectionMode="Multiple" SelectionChangedCommand="word_SelectionChanged" Grid.Row="1">
+            <CollectionView SelectionMode="Multiple" ItemsSource="{Binding allWorlds}" SelectionChanged="word_SelectionChanged" Grid.Row="1">
 
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Span="6" Orientation="Vertical" />
@@ -30,13 +30,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <ContentView Padding="10">
-                            <Border Stroke="Black" StrokeThickness="0.3" Margin="3" WidthRequest="200" HeightRequest="50"
-                                    BackgroundColor="#323232"
-                                    HorizontalOptions="Start"
-                                    StrokeShape="RoundRectangle 20">
-
-                                <Label Text="Testando" FontSize="20" HorizontalTextAlignment="Center" TextColor="White" />
-                            </Border>
+                            <Label Text="{Binding Word}" FontSize="20" HorizontalTextAlignment="Center" TextColor="White"/>
                         </ContentView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
