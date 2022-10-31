@@ -14,7 +14,8 @@
         <Grid Padding="10" RowDefinitions="150,*">
             <VerticalStackLayout Grid.Row="0">
                 <Label Text="Check it out all the words you have added" TextColor="White" FontSize="Title" HorizontalTextAlignment="Center"/>
-                <SearchBar x:Name="searchBar" Placeholder="Search a word" IsTextPredictionEnabled="True" Margin="10" MaximumWidthRequest="450" HeightRequest="30"/>
+                <SearchBar x:Name="searchBar" SearchButtonPressed="SearchWord" Placeholder="Search a word" IsTextPredictionEnabled="True" Margin="10" MaximumWidthRequest="450" HeightRequest="30"/>
+                <Button x:Name="SearchedWord" Text="" FontSize="20" HorizontalOptions="Start" TextColor="White" BackgroundColor="#272727" Margin="10" Clicked="GoTo" MinimumWidthRequest= "0" />
             </VerticalStackLayout>
 
             <CollectionView SelectionMode="Multiple" ItemsSource="{Binding allWorlds}" SelectionChanged="word_SelectionChanged" Grid.Row="1">

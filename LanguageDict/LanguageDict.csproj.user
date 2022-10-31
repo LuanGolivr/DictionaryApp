@@ -11,6 +11,9 @@
     <MauiXaml Update="Views\GetANewWord.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\SeeMore.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\WordsPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

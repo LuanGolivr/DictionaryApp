@@ -118,7 +118,9 @@ public partial class WordsPage : ContentPage
                 }
                 else if (action == "See more details")
                 {
-                    
+                    DataBs server = new DataBs();
+                    server.SetSelectedWord(SelectedWord);
+                    await Shell.Current.GoToAsync(nameof(SeeMore));
                 }
                 else
                 {
@@ -126,5 +128,47 @@ public partial class WordsPage : ContentPage
                 }
             }
         }
+    }
+
+    private async void SearchWord(object sender, EventArgs e)
+    {
+        string word = searchBar.Text;
+
+        if(word != null && word != "")
+        {
+            bool result = SelectedDict.Trie.SearchWord(word);
+
+            if (result)
+            {
+                for(int i = 0; i < SelectedDict.allWorlds.Count; i++)
+                {
+                    if (SelectedDict.allWorlds[i].Word == word)
+                    {
+                        SearchedWord.Text = SelectedDict.allWorlds[i].Word;
+                        break;
+                    }
+                }
+            }else
+            {
+                await DisplayAlert("Search", "We didn't find this word on the dictionary", "OK");
+            }
+        }
+    }
+
+    private void GoTo(object sender, EventArgs e)
+    {
+        DataBs server = new DataBs();
+
+        for(int i = 0; i < SelectedDict.allWorlds.Count; i++)
+        {
+            if (SelectedDict.allWorlds[i].Word == SearchedWord.Text)
+            {
+                SelectedWord = SelectedDict.allWorlds[i];
+                break;
+            }
+        }
+
+        server.SetSelectedWord(SelectedWord);
+        Shell.Current.GoToAsync(nameof(SeeMore));
     }
 }

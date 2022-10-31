@@ -100,6 +100,25 @@ namespace LanguageDict.Models
             return result;
         }
 
+        public void SetSelectedWord(Words selectedWord)
+        {
+            var collection = getCollection("SelectedWord");
+            var bsonDoc = selectedWord.ToBsonDocument();
+            var filter = Builders<BsonDocument>.Filter.Eq("Word", selectedWord.Word);
+            collection.DeleteOne(filter);
+            collection.InsertOne(bsonDoc);
+        }
+
+        public Words GetSelectedWord()
+        {
+            var collection = getCollection("SelectedWord");
+            var doc = collection.Find(new BsonDocument()).FirstOrDefault();
+
+            doc.RemoveAt(0);
+            Words selectedWord = BsonSerializer.Deserialize<Words>(doc);
+            return selectedWord;
+        }
+
         public bool addNewWord(Words word, string targetLang)
         {
             var collection = getCollection("Dictionaries");

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LanguageDict.Views.SeeMore"
+             Title="More Details"
+             BackgroundColor="#272727">
+    <ScrollView>
+        <Grid ColumnDefinitions="*,*" Padding="10">
+            <VerticalStackLayout Grid.Column="0">
+                <Label Text="Word: " FontSize="Title" />
+                <Entry x:Name="textWord" Text="{Binding Word}" />
+
+                <Label Text="Translation: " FontSize="Title" />
+                <Entry x:Name="textTrans" Text="{Binding Translation}" />
+
+                <Label Text="Meanings: " FontSize="Title" />
+                <Entry x:Name="textMean" Text="{Binding Meanings}" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1">
+                <Button HorizontalOptions="End" Grid.Column="1" Text="Save Changes" BackgroundColor="Green" Clicked="SaveChanges" CornerRadius="20" TextColor="White"/>
+                <Label Text="Synonimus: " FontSize="Title" />
+                <Entry x:Name="textSyno" Text="{Binding Synonimus}" />
+
+                <Label Text="Antonymus: " FontSize="Title" />
+                <Entry x:Name="textAnto" Text="{Binding Antonyms}" />
+
+                <Label Text="Examples: " FontSize="Title" />
+                <Entry x:Name="textExam" Text="{Binding Examples}" />
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -105,7 +105,7 @@
         <Setter Property="Margin" Value="15" />
         <Setter Property="MaximumWidthRequest" Value="500" />
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="#272727" />
         <Setter Property="IsSpellCheckEnabled" Value="False" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="15" />
