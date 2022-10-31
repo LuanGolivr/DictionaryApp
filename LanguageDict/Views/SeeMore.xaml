@@ -8,25 +8,24 @@
         <Grid ColumnDefinitions="*,*" Padding="10">
             <VerticalStackLayout Grid.Column="0">
                 <Label Text="Word: " FontSize="Title" />
-                <Entry x:Name="textWord" Text="{Binding Word}" />
+                <Label Text="{Binding Word}" Padding="10" FontSize="15"/>
 
                 <Label Text="Translation: " FontSize="Title" />
-                <Entry x:Name="textTrans" Text="{Binding Translation}" />
+                <Label Text="{Binding Translation}" Padding="10" FontSize="15"/>
 
                 <Label Text="Meanings: " FontSize="Title" />
-                <Entry x:Name="textMean" Text="{Binding Meanings}" />
+                <Label Text="{Binding Meanings}" Padding="10" FontSize="15"/>
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Column="1">
-                <Button HorizontalOptions="End" Grid.Column="1" Text="Save Changes" BackgroundColor="Green" Clicked="SaveChanges" CornerRadius="20" TextColor="White"/>
                 <Label Text="Synonimus: " FontSize="Title" />
-                <Entry x:Name="textSyno" Text="{Binding Synonimus}" />
+                <Label Text="{Binding Synonimus}" Padding="10" FontSize="15"/>
 
                 <Label Text="Antonymus: " FontSize="Title" />
-                <Entry x:Name="textAnto" Text="{Binding Antonyms}" />
+                <Label Text="{Binding Antonyms}" Padding="10" FontSize="15"/>
 
                 <Label Text="Examples: " FontSize="Title" />
-                <Entry x:Name="textExam" Text="{Binding Examples}" />
+                <Label Text="{Binding Examples}" Padding="10" FontSize="15"/>
             </VerticalStackLayout>
         </Grid>
     </ScrollView>

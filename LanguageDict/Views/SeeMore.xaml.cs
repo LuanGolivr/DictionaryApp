@@ -18,9 +18,4 @@ public partial class SeeMore : ContentPage
 		var data = server.GetSelectedWord();
 		CurrentWord = new Details(data);
 	}
-
-    private void SaveChanges(object sender, EventArgs e)
-    {
-
-    }
 }
