@@ -53,19 +53,19 @@ public partial class WordsPage : ContentPage
                     newExamp = await DisplayPromptAsync("Example", "Insert an example");
 
                     Words addedWord = new Words();
-                    addedWord.Word = newWord;
-                    addedWord.Translation = newTransl;
-                    addedWord.Meanings.Add(newMeanings);
-                    addedWord.Synonimus.Add(newSyno);
-                    addedWord.Antonyms.Add(newAnton);
-                    addedWord.Examples.Add(newExamp);
+                    addedWord.Word = newWord.ToLower();
+                    addedWord.Translation = newTransl.ToLower();
+                    addedWord.Meanings.Add(newMeanings.ToLower());
+                    addedWord.Synonimus.Add(newSyno.ToLower());
+                    addedWord.Antonyms.Add(newAnton.ToLower());
+                    addedWord.Examples.Add(newExamp.ToLower());
 
                     DataBs server = new DataBs();
                     bool result = server.addNewWord(addedWord, SelectedDict.Target);
 
                     if (result)
                     {
-                        SelectedDict = server.GetSelectedDict();
+                        SelectedDict.allWorlds.Add(addedWord);
                         await DisplayAlert("Word", "The word was inserted sucessfuly!", "OK");
                     }
                     else
@@ -77,8 +77,54 @@ public partial class WordsPage : ContentPage
         }
     }
 
-    private void word_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private async void RemoveWord()
     {
+        if(SelectedWord != null)
+        {
+            DataBs server = new DataBs();
+            bool result = server.removeWord(SelectedWord.Word, SelectedDict.Target);
 
+            if (result)
+            {
+                for(int i = 0; i < SelectedDict.allWorlds.Count; i++)
+                {
+                    if (SelectedDict.allWorlds[i].Word == SelectedWord.Word)
+                    {
+                        SelectedDict.allWorlds.RemoveAt(i);
+                    }
+                }
+
+                await DisplayAlert("Remove Word", "The word was removed", "OK");
+            }else
+            {
+                await DisplayAlert("Remove Word", "The word wasn't removed", "OK");
+            }
+        }
+    }
+
+    private async void word_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.CurrentSelection.Count != 0)
+        {
+            SelectedWord = (Words)e.CurrentSelection[e.CurrentSelection.Count - 1];
+
+            if(SelectedWord != null)
+            {
+                string action = await DisplayActionSheet("Action", "Cancel", null, "See more details", "Remove word");
+
+                if (action == "Remove word")
+                {
+                    RemoveWord();
+                }
+                else if (action == "See more details")
+                {
+                    
+                }
+                else
+                {
+                    SelectedWord = null;
+                }
+            }
+        }
     }
 }

@@ -137,9 +137,41 @@ namespace LanguageDict.Models
             return false;
         }
 
-        public void removeWord(string word)
+        public bool removeWord(string word, string targetLang)
         {
+            var collection = getCollection("Dictionaries");
+            var filter = Builders<BsonDocument>.Filter.Eq("Target", targetLang);
+            var doc = collection.Find(filter).FirstOrDefault();
 
+            if(doc != null)
+            {
+                doc.RemoveAt(0);
+                Dict obj = BsonSerializer.Deserialize<Dict>(doc);
+
+                bool result = obj.Trie.RemoveWord(word);
+
+                if (result)
+                {
+                    for(int i = 0; i < obj.allWorlds.Count; i++)
+                    {
+                        if (obj.allWorlds[i].Word == word)
+                        {
+                            obj.allWorlds.Remove(obj.allWorlds[i]);
+
+                            var bsonDoc = obj.ToBsonDocument();
+                            filter = Builders<BsonDocument>.Filter.Eq("Target", targetLang);
+                            collection.DeleteOne(filter);
+                            collection.InsertOne(bsonDoc);
+                            SetSelected(obj);
+
+                            break;
+                        }
+                    }
+
+                    return true;
+                }
+            }
+            return false;
         }
 
         public void searchWord(string word)
